@@ -26,6 +26,13 @@ p {
     font-size: 16px;
 }
 
+.treact__link {
+    color: #f8f8f8;
+    line-height: 1.5;
+    font-size: 16px;
+    font-weight: bolder;
+}
+
 a {
     text-decoration: none;
     position: relative;
