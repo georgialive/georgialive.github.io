@@ -175,8 +175,8 @@ nav {
 }
 
 .about-me__picture--mask {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     overflow: hidden;
     box-shadow: 0 8px 16px black(0, 0, 0, 0.16);
@@ -272,6 +272,7 @@ nav {
 }
 
 .about-me__img {
+    padding: 0 28px;
     width: 100%;
     animation: fade-in 1200ms 800ms backwards;
 }
