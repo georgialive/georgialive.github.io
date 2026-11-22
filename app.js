@@ -1,3 +1,4 @@
+import { initAdvancedLab } from "./advanced-lab.js";
 import { initCourseMap } from "./course-map.js";
 import { initContactDialog } from "./contact.js";
 import { initMathLab } from "./math-lab.js";
@@ -385,6 +386,7 @@ initProjectDialog();
 initContact();
 initContactDialog();
 initMathLab();
+initAdvancedLab();
 initCourseMap();
 initInstrument();
 document.querySelector("#year").textContent = String(new Date().getFullYear());
