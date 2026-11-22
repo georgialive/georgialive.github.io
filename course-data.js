@@ -54,4 +54,27 @@ export const courses = entries.map(([year, term, code, title, summary, credits])
   status: year === 1 ? "completed" : year === 2 && term === "Fall" ? "current" : "future",
   url: /^[A-Z]+ \d/.test(code) ? `https://calendar.carleton.ca/search/?P=${encodeURIComponent(code.split(" / ")[0])}` : courseSource,
 }));
-export const statusLabels = { completed: "Completed", current: "In progress", future: "Ahead" };
+export const statusLabels = { completed: "Completed", current: "In progress", future: "To take" };
+
+// Automatic progression is a calendar plan, not a transcript/grade integration.
+// Override a course via statusOverride or adjust its start/end if the plan changes.
+export const semesterSchedule = {
+  "2-Fall": { start: "2026-09-09", end: "2026-12-23", official: true },
+  "2-Winter": { start: "2027-01-06", end: "2027-04-23", official: true },
+  "3-Fall": { start: "2027-09-01", end: "2027-12-31", official: false },
+  "3-Winter": { start: "2028-01-01", end: "2028-04-30", official: false },
+  "4-Fall": { start: "2028-09-01", end: "2028-12-31", official: false },
+  "4-Winter": { start: "2029-01-01", end: "2029-04-30", official: false },
+  "4-Full year": { start: "2028-09-01", end: "2029-04-30", official: false },
+};
+export function torontoDate(date = new Date()) {
+  return new Intl.DateTimeFormat("en-CA", { timeZone: "America/Toronto", year: "numeric", month: "2-digit", day: "2-digit" }).format(date);
+}
+export function courseStatus(course, date = new Date()) {
+  if (course.statusOverride) return course.statusOverride;
+  if (course.year === 1) return "completed";
+  const schedule = semesterSchedule[`${course.year}-${course.term}`];
+  const day = typeof date === "string" ? date : torontoDate(date);
+  if (!schedule) return "future";
+  return day > schedule.end ? "completed" : day >= schedule.start ? "current" : "future";
+}
