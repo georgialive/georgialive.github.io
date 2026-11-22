@@ -19,7 +19,7 @@ npm run check
 npm run build
 ```
 
-The allowlisted Node build writes `dist/`. GitHub Pages can also serve the root. `vercel.json` declares the static output and Node build explicitly. CI runs nineteen Node tests for pattern generation, geometry, contact data, and course progress plus nine Python checks for document structure, assets, metadata, and verified chronology.
+The allowlisted Node build writes `dist/`. GitHub Pages can also serve the root. `vercel.json` declares the static output and Node build explicitly. CI runs twenty Node tests for pattern generation, geometry, contact data, and course progress plus nine Python checks for document structure, assets, metadata, and verified chronology.
 
 ## Source layout
 
@@ -31,7 +31,7 @@ The allowlisted Node build writes `dist/`. GitHub Pages can also serve the root.
 - `tests/`: deterministic instrument and document checks.
 - `media/`: optimized imagery, self-hosted fonts, and licenses.
 
-Original `Assets/` remain for compatibility. The outdated resume is not linked.
+Original `Assets/` remain for compatibility. Historical résumé PDFs have been removed from this branch.
 
 ## Content verification
 
@@ -55,7 +55,7 @@ The archive includes all six LinkedIn project entries plus the two older practic
 
 The contact dialog submits directly through FormSubmit’s AJAX endpoint to Georgia’s public email. First-time activation requires the owner to confirm FormSubmit’s email. Until activation, visitors get an explicit pending-confirmation message with a direct email fallback; failed requests preserve typed content. Native validation, a honeypot, field limits, a submission lock, and a timeout are included. CSP permits only the necessary FormSubmit connection and form destination. No keys are exposed or required. FormSubmit receives the submitted name, email, and message; this is disclosed beside the form.
 
-Source checks now include nineteen Node tests and nine Python document checks. Source: https://carleton.ca/engineering-design/wp-content/uploads/sites/63/2025/07/SOFT-202530.pdf . Form service documentation: https://formsubmit.co/ajax-documentation .
+Source checks now include twenty Node tests and nine Python document checks. Source: https://carleton.ca/engineering-design/wp-content/uploads/sites/63/2025/07/SOFT-202530.pdf . Form service documentation: https://formsubmit.co/ajax-documentation .
 
 ## Compact course explorer and advanced models
 
@@ -63,12 +63,14 @@ The course view now shows one year at a time, with compact term grids and green 
 
 `courseStatus()` computes calendar-based progression in America/Toronto. First year remains confirmed complete. Later semesters switch after their configured end date; Fall 2026 uses December 23 and Winter 2027 April 23, from Carleton’s academic calendar. Subsequent years use explicitly provisional month-end dates. This is a public progression plan, not a grade integration. Change `semesterSchedule` or add a course `statusOverride` if enrolment or completion differs. The browser refreshes on load, visibility changes, and once per minute. Static builds render a current snapshot automatically.
 
-The main math panel offers Lissajous waves, surfaces of revolution, a Koch curve, and preorder tree traversal. Solid wireframes use orthographic projection and analytic sweep-volume readouts. Fractal depth and tree size are bounded. The course miniatures share deterministic SVG models without animation or network requests.
+The main math panel offers Lissajous waves, surfaces of revolution, a Fibonacci recursion studio, and preorder tree traversal. Solid wireframes use orthographic projection and analytic sweep-volume readouts. Fractal depth and tree size are bounded. The course miniatures share deterministic SVG models without animation or network requests.
 
-The header and opening section use accessible GitHub/LinkedIn icon links and a public HTML résumé. `resume.html` has print styling and a Print / save PDF action. It uses verified public role wording and excludes phone, private references, and unsupported numerical claims from the older résumé. Section order: experience, capabilities, personal introduction, math playground, compact learning explorer, older project archive, credentials, profile links, contact.
+The header and opening section use accessible GitHub/LinkedIn icon links. The résumé page, links, script and styles have been removed. Section order: experience, capabilities, personal introduction, math playground, compact learning explorer, older project archive, credentials, profile links, contact.
 
 ## Detailed course popups and header refinement
 
-Header actions share a single aligned row. Résumé and copy-email actions use labelled icons with visible focus and hover titles. Course popups include paraphrased topic lists for every named course, links to the current Carleton calendar description, and additional public outlines where available. Older departmental templates are explicitly labelled. Elective models remain representative until selections are known.
+Header actions share a single aligned row. Copy email uses a labelled icon with visible focus and a hover title. Course popups include paraphrased topic lists for every named course, links to the current Carleton calendar description, and additional public outlines where available. Older departmental templates are explicitly labelled. Elective models remain representative until selections are known.
 
 Course illustrations now include a fetch–decode–execute CPU, full-adder truth states, binary-search paths, memory references, inheritance, scheduling, concurrent buffers, requirement traceability, architecture patterns, project metrics, boundary testing, security controls, factorial design, and an ideal pH scale. Pure-model tests check adder outputs, search paths, scheduler conservation, buffer operations, boundary defects, and topic-source completeness. Final offering details remain governed by the instructor’s outline.
+
+The recursion studio builds a Fibonacci square tiling one term at a time, with a quarter-circle spiral guide. Select a term or scrub the build step to see the recurrence, area and consecutive-term ratio; the guide is a circular approximation, not an exact golden spiral. Bounded geometry and area/non-overlap invariants have automated coverage.
