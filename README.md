@@ -1,43 +1,46 @@
 # Georgia Vrana · Portfolio
 
-A responsive portfolio built with semantic HTML, modern CSS, and progressively enhanced JavaScript. No framework, runtime dependencies, analytics, external scripts, or third-party font requests.
+A responsive portfolio using semantic HTML, modern CSS, and JavaScript modules. No framework, runtime dependencies, analytics, external scripts, or third-party font requests.
 
-## Review the redesign
+## Review
 
-The redesign lives on `redesign/portfolio-2026`. Production uses `main`. The pull request contains a private, deployed review URL; merging remains a separate decision.
+Changes live on `redesign/portfolio-2026`; production remains on `main`. Draft PR #1 includes the private deployed review URL. Merge only after review.
 
-The site works without JavaScript. JavaScript adds project filters, optional email copying, and a live 128-bit visualization using the browser's Web Crypto API. The demo is not a QPP-RNG implementation or an entropy evaluation.
+Recent experience leads the page, with equally prominent DND and Quantropi cards. Selected technical employment follows in reverse chronological order. Earlier projects occupy compact archive rows with accessible image dialogs and direct image fallbacks.
 
-## Develop and check
+The curiosity lab maps Web Crypto bytes into a sixteen-note pentatonic melody and an interactive constellation or wave. Visitors can adjust scatter and tempo, select notes, generate patterns, and start or stop playback. Audio starts only after a user action. This is a creative browser demo, separate from QPP-RNG; it does not evaluate entropy.
 
-Requires Python 3.10+ and Node.js 18+ for the JavaScript syntax check. No package installation is needed.
+## Development
+
+Node.js 22+ builds the site without installing packages. Checks also require Python 3.10+.
 
 ```sh
 npm run check
 npm run build
-python3 -m http.server 8000 --directory dist
 ```
 
-Open `http://localhost:8000`. GitHub Pages can still serve the repository root. The allowlisted build excludes tests, old PDFs, unrelated assets, and development files.
+The allowlisted Node build writes `dist/`. GitHub Pages can also serve the root. `vercel.json` declares the static output and Node build explicitly. CI runs four Node tests for pattern generation and geometry plus eight Python checks for document structure, assets, metadata, and verified chronology.
 
-## Maintain
+## Source layout
 
-- `index.html`: content, project details, and metadata.
-- `styles.css`: design tokens, layouts, responsive breakpoints, and reduced-motion support.
-- `app.js`: optional interactions and permission-failure fallbacks.
-- `media/`: optimized imagery, self-hosted WOFF2 fonts, and their licenses.
-- `tests/test_site.py`: navigation, asset, accessibility, and content privacy checks.
+- `index.html`: content, dialogs, capability panels, metadata.
+- `styles.css`: tokens, responsive layout, focus and reduced-motion styles.
+- `app.js`: gallery, keyboard tabs, contact copying, Canvas and Web Audio interactions.
+- `instrument.js`: pure pattern and layout functions.
+- `scripts/build.mjs`: allowlisted static build.
+- `tests/`: deterministic instrument and document checks.
+- `media/`: optimized imagery, self-hosted fonts, and licenses.
 
-Original assets remain in `Assets/` for compatibility; this version uses `media/`. The old résumé is not linked because its education and employment details are outdated. Contact links provide a way to request current information.
+Original `Assets/` remain for compatibility. The outdated resume is not linked.
 
-## Content sources and boundaries
+## Content verification
 
-Research: https://doi.org/10.1038/s41598-025-13135-8. Project information and imagery come from the existing portfolio; updated skills and experience come from Georgia's supplied background.
+Georgia’s LinkedIn profile was checked on November 22, 2026: https://www.linkedin.com/in/georgiavrana/ . DND Cryptanalyst: May–August 2026; Quantropi Cryptographic Analyst: February–September 2025; Frontend Simplified: January 2023–May 2024; Project: Empower: March–December 2023. The DND entry has no public responsibility description, so only its title, dates, internship type and workplace metadata are used. No confidential work details are included.
 
-The government role is limited to “Government Cryptanalyst Internship.” Assistive technology is described as a research prototype, without clinical efficacy claims. Historic traffic and percentage claims are omitted because they were not independently substantiated during this redesign.
+Research source: https://doi.org/10.1038/s41598-025-13135-8 . Earlier project descriptions and images come from the existing portfolio. Assistive technology remains described as an exploratory prototype, without clinical efficacy claims. Unsubstantiated historical traffic and percentage claims are omitted.
 
-## Accessibility and performance
+## Accessibility
 
-One primary heading, a skip link, visible focus styles, labelled filters and live result counts, native expandable details, specified image dimensions, lazy loading, and reduced-motion support. Content does not depend on hover or JavaScript. Clipboard errors have a readable fallback. The page makes no analytics requests.
+Skip navigation, semantic landmarks, visible focus, keyboard-operable tabs, native dialog focus handling, image links without JavaScript, labelled tuning inputs, playback feedback, reduced-motion support, and readable clipboard failure fallbacks. Text content remains available without JavaScript. Canvas has a textual description and equivalent individual note controls.
 
-Manrope and Instrument Serif are distributed under the SIL Open Font License; license texts are included in `media/fonts/`.
+Manrope and Instrument Serif use the SIL Open Font License, included in `media/fonts/`.
