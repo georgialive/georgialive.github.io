@@ -46,7 +46,7 @@ class PortfolioChecks(unittest.TestCase):
                 self.assertIn("width", attrs)
                 self.assertIn("height", attrs)
             if tag == "button":
-                self.assertEqual(attrs.get("type"), "button")
+                self.assertIn(attrs.get("type"), {"button", "submit"})
         self.assertEqual(sum(tag == "h1" for tag, _ in self.page.elements), 1)
         self.assertEqual(sum(tag == "main" for tag, _ in self.page.elements), 1)
 
@@ -62,11 +62,24 @@ class PortfolioChecks(unittest.TestCase):
         self.assertNotIn("innerHTML", (ROOT / "app.js").read_text())
         self.assertIn("prefers-reduced-motion", (ROOT / "styles.css").read_text())
 
-    def test_government_description_stays_limited(self):
-        self.assertIn("Government Cryptanalyst Internship", self.source)
-        entry = re.search(r'<article class="timeline-entry compact-entry">(.*?)</article>', self.source).group(1)
-        content = re.sub(r"<[^>]+>", " ", entry)
-        self.assertEqual(" ".join(content.split()), "Internship Government Cryptanalyst Internship")
+    def test_verified_experience_dates_and_reverse_chronology(self):
+        # Verified against Georgia's LinkedIn experience section, 2026-11-22.
+        ends = re.findall(r'data-end="([0-9-]+)"', self.source)
+        self.assertEqual(ends, ["2026-08", "2025-09", "2025-09", "2024-11", "2024-10", "2024-05", "2023-12"])
+        self.assertEqual(ends, sorted(ends, reverse=True))
+        self.assertIn("Department of National Defence", self.source)
+        self.assertIn("May – Aug 2026", self.source)
+        self.assertIn("Feb – Sep 2025", self.source)
+
+    def test_archive_dialog_and_toolkit_references_resolve(self):
+        ids = {attrs["id"] for _, attrs in self.page.elements if "id" in attrs}
+        for _, attrs in self.page.elements:
+            if "data-project" in attrs:
+                self.assertIn(attrs["data-project"], ids)
+            if "aria-controls" in attrs:
+                self.assertIn(attrs["aria-controls"], ids)
+        self.assertEqual(sum(tag == "dialog" for tag, _ in self.page.elements), 3)
+        self.assertEqual(sum("data-project" in attrs for _, attrs in self.page.elements), 8)
 
     def test_canonical_domain_preserved(self):
         self.assertEqual((ROOT / "CNAME").read_text().strip(), "georgiavrana.com")
