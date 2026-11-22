@@ -19,7 +19,7 @@ npm run check
 npm run build
 ```
 
-The allowlisted Node build writes `dist/`. GitHub Pages can also serve the root. `vercel.json` declares the static output and Node build explicitly. CI runs eight Node tests for pattern generation, geometry, contact data, and course progress plus eight Python checks for document structure, assets, metadata, and verified chronology.
+The allowlisted Node build writes `dist/`. GitHub Pages can also serve the root. `vercel.json` declares the static output and Node build explicitly. CI runs thirteen Node tests for pattern generation, geometry, contact data, and course progress plus nine Python checks for document structure, assets, metadata, and verified chronology.
 
 ## Source layout
 
@@ -47,7 +47,7 @@ Manrope and Instrument Serif use the SIL Open Font License, included in `media/f
 
 ## Personal, academic, and contact additions
 
-The course map uses Carleton’s 202530 Software Engineering progression map. Georgia confirmed first year completed and Fall 2026 second-year courses in progress on November 22, 2026. CCDP 2100 is shown in her actual Fall term. Future electives are requirement placeholders, and non-credit requirements are labelled. No grades, student ID, or private audit data are published. `course-data.js` owns the status and summaries; `scripts/render-course-map.mjs` generates static markup. If the data changes, regenerate the map in `index.html` before building; the source and built HTML both work with GitHub Pages.
+The course map uses Carleton’s 202530 Software Engineering progression map. Georgia confirmed first year completed and Fall 2026 second-year courses in progress on November 22, 2026. CCDP 2100 is shown in her actual Fall term. Future electives are requirement placeholders, and non-credit requirements are labelled. No grades, student ID, or private audit data are published. `course-data.js` owns the status and summaries; `scripts/render-course-map.mjs` generates static markup. The build regenerates the map in `index.html` automatically; the source and built HTML both work with GitHub Pages.
 
 The Lissajous playground is a second interactive element: frequency and phase controls, presets, a trace slider, and optional playback. `math.js` contains independently tested geometry. Running, weightlifting, music, and math appear in the personal section without invented performance claims. The uploaded portrait is preserved without facial retouching; a WebP photograph is embedded inside a self-contained SVG for text-based repository transfer.
 
@@ -55,4 +55,14 @@ The archive includes all six LinkedIn project entries plus the two older practic
 
 The contact dialog submits directly through FormSubmit’s AJAX endpoint to Georgia’s public email. First-time activation requires the owner to confirm FormSubmit’s email. Until activation, visitors get an explicit pending-confirmation message with a direct email fallback; failed requests preserve typed content. Native validation, a honeypot, field limits, a submission lock, and a timeout are included. CSP permits only the necessary FormSubmit connection and form destination. No keys are exposed or required. FormSubmit receives the submitted name, email, and message; this is disclosed beside the form.
 
-Source checks now include eight Node tests and eight Python document checks. Source: https://carleton.ca/engineering-design/wp-content/uploads/sites/63/2025/07/SOFT-202530.pdf . Form service documentation: https://formsubmit.co/ajax-documentation .
+Source checks now include thirteen Node tests and nine Python document checks. Source: https://carleton.ca/engineering-design/wp-content/uploads/sites/63/2025/07/SOFT-202530.pdf . Form service documentation: https://formsubmit.co/ajax-documentation .
+
+## Compact course explorer and advanced models
+
+The course view now shows one year at a time, with compact term grids and green completed / purple in-progress / grey future badges. On the reference desktop viewport, its height changed from 2353px to about 910px. Every course opens an adjustable SVG concept illustration. Elective placeholders use clearly representative illustrations until a specific course is selected.
+
+`courseStatus()` computes calendar-based progression in America/Toronto. First year remains confirmed complete. Later semesters switch after their configured end date; Fall 2026 uses December 23 and Winter 2027 April 23, from Carleton’s academic calendar. Subsequent years use explicitly provisional month-end dates. This is a public progression plan, not a grade integration. Change `semesterSchedule` or add a course `statusOverride` if enrolment or completion differs. The browser refreshes on load, visibility changes, and once per minute. Static builds render a current snapshot automatically.
+
+The main math panel offers Lissajous waves, surfaces of revolution, a Koch curve, and preorder tree traversal. Solid wireframes use orthographic projection and analytic sweep-volume readouts. Fractal depth and tree size are bounded. The course miniatures share deterministic SVG models without animation or network requests.
+
+The header and opening section use accessible GitHub/LinkedIn icon links and a public HTML résumé. `resume.html` has print styling and a Print / save PDF action. It uses verified public role wording and excludes phone, private references, and unsupported numerical claims from the older résumé. Section order: experience, capabilities, personal introduction, math playground, compact learning explorer, older project archive, credentials, profile links, contact.
