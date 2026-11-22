@@ -1,3 +1,6 @@
+import { initCourseMap } from "./course-map.js";
+import { initContactDialog } from "./contact.js";
+import { initMathLab } from "./math-lab.js";
 import { makePattern, positionNotes } from "./instrument.js";
 
 function initToolkit() {
@@ -380,5 +383,8 @@ function initInstrument() {
 initToolkit();
 initProjectDialog();
 initContact();
+initContactDialog();
+initMathLab();
+initCourseMap();
 initInstrument();
 document.querySelector("#year").textContent = String(new Date().getFullYear());
