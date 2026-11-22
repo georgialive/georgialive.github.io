@@ -4,95 +4,177 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light">
-  <meta name="theme-color" content="#f7f7fc">
-  <meta name="description" content="Hi, I'm Georgia Vrana, a software engineering student, published cryptography researcher, and musician in Ottawa. Explore my work across systems, web development, and assistive technology.">
+  <meta name="theme-color" content="#faf9fe">
+  <meta name="description" content="Georgia Vrana: Software Engineering student at Carleton, former DND cryptanalyst, and first author of published cryptography research. Explore experience, technical skills, and an interactive entropy instrument.">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Georgia Vrana — Software, with purpose.">
-  <meta property="og:description" content="Software engineering, cryptography research, and a little creative curiosity. A portfolio by Georgia Vrana.">
+  <meta property="og:title" content="Georgia Vrana — Engineering with curiosity.">
+  <meta property="og:description" content="Cryptanalysis, published research, and thoughtful software. Explore Georgia Vrana’s work.">
   <meta property="og:url" content="https://georgiavrana.com/">
   <meta property="og:image" content="https://georgiavrana.com/media/social-preview.png">
-  <meta property="og:image:alt" content="Georgia Vrana. Software, with purpose. Engineering, research, and thoughtful interfaces.">
+  <meta property="og:image:alt" content="Georgia Vrana. A curious mind. A builder’s heart. Purposeful code.">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://georgiavrana.com/">
   <link rel="icon" href="media/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="media/fonts/manrope-regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="media/fonts/manrope-bold.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles.css">
-  <script src="app.js" defer></script>
-  <title>Georgia Vrana — Software, with purpose.</title>
+  <script type="module" src="app.js"></script>
+  <title>Georgia Vrana — Engineering with curiosity.</title>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header"><div class="shell header-inner">
-    <a class="wordmark" href="#home" aria-label="Georgia Vrana, back to top"><span class="monogram" aria-hidden="true">gv</span><span>Georgia Vrana<span class="purple">.</span></span></a>
-    <nav class="main-nav" aria-label="Main navigation"><a href="#work">Work</a><a href="#research">Research</a><a href="#experience">Experience</a><a href="#about">About</a></nav>
-    <a class="button button-small header-contact" href="#contact">Say hello <span class="purple" aria-hidden="true">✺</span></a>
-  </div></header>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="wordmark" href="#home" aria-label="Georgia Vrana, back to top"><span class="monogram" aria-hidden="true">gv</span>Georgia Vrana<span class="purple">.</span></a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#experience">Experience</a><a href="#toolkit">Toolkit</a><a href="#about">About</a><a href="#archive">Archive</a>
+      </nav>
+      <a class="button button-small" href="#contact">Let’s talk <span aria-hidden="true">✺</span></a>
+    </div>
+  </header>
   <main id="main">
     <section class="hero shell" id="home" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <p class="eyebrow"><span class="small-star" aria-hidden="true">✺</span> Software engineering · Ottawa, Canada</p>
+        <p class="eyebrow">Software engineering · Cryptanalysis · Research</p>
         <h1 id="hero-title">A curious mind.<br>A builder’s heart.<br><em>Purposeful code.</em></h1>
-        <p class="hero-intro">Hi, I’m Georgia! I turn tricky problems into thoughtful software, from the little signals behind cryptographic randomness to the interfaces people use every day.</p>
-        <div class="hero-actions"><a class="button button-primary" href="#work">Explore my work</a><a class="text-link" href="https://github.com/georgialive" target="_blank" rel="noopener noreferrer">Find me on GitHub <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M9 21v-4c0-1-.5-2-1-2-5 0-6-9-2-11L6 1l4 2h4l4-2v3c4 2 3 11-2 11-.5 0-1 1-1 2v4M9 18c-4 1-4-2-6-2"/></svg></a></div>
-        <div class="hero-footnote"><span class="portrait-mini"><img src="media/portrait.webp" width="44" height="44" alt="" fetchpriority="high"></span><p>Engineering student at <strong>Carleton University</strong><br>Researcher. Problem solver. Musician.</p></div>
-      </div>
-      <div class="hero-art">
-        <div class="orbit-label"><span aria-hidden="true">✦</span> A little curiosity goes a long way.</div>
-        <div class="signal-card">
-          <div class="signal-heading"><span class="tiny-label">THE CURIOSITY LAB</span><span class="chip-dark">Interactive sketch</span></div>
-          <div class="signal-title">Big ideas.<br><span>Small beginnings.</span></div>
-          <div class="bit-grid" id="bit-grid" aria-hidden="true"><!-- Static sketch; progressively enhanced with browser-generated bits. -->
-            <span class="is-one"></span><span></span><span class="is-one"></span><span></span><span></span><span class="is-one"></span><span class="is-one"></span><span></span><span></span><span class="is-one"></span><span></span><span></span><span class="is-one"></span><span></span><span class="is-one"></span><span class="is-one"></span>
-            <span></span><span class="is-one"></span><span></span><span></span><span class="is-one"></span><span class="is-one"></span><span></span><span></span><span class="is-one"></span><span></span><span class="is-one"></span><span></span><span></span><span class="is-one"></span><span></span><span></span>
-            <span class="is-one"></span><span></span><span></span><span class="is-one"></span><span></span><span class="is-one"></span><span></span><span class="is-one"></span><span></span><span></span><span class="is-one"></span><span class="is-one"></span><span></span><span></span><span class="is-one"></span><span></span>
-            <span></span><span class="is-one"></span><span class="is-one"></span><span></span><span></span><span></span><span class="is-one"></span><span></span><span class="is-one"></span><span></span><span></span><span class="is-one"></span><span class="is-one"></span><span></span><span></span><span class="is-one"></span>
-            <span class="is-one"></span><span></span><span class="is-one"></span><span class="is-one"></span><span></span><span></span><span></span><span class="is-one"></span><span></span><span class="is-one"></span><span></span><span class="is-one"></span><span></span><span></span><span class="is-one"></span><span></span>
-            <span></span><span class="is-one"></span><span></span><span></span><span class="is-one"></span><span></span><span class="is-one"></span><span></span><span class="is-one"></span><span></span><span class="is-one"></span><span></span><span></span><span class="is-one"></span><span></span><span class="is-one"></span>
-            <span class="is-one"></span><span class="is-one"></span><span></span><span></span><span class="is-one"></span><span></span><span></span><span class="is-one"></span><span></span><span></span><span class="is-one"></span><span></span><span class="is-one"></span><span></span><span class="is-one"></span><span></span>
-            <span></span><span></span><span class="is-one"></span><span class="is-one"></span><span></span><span class="is-one"></span><span></span><span></span><span class="is-one"></span><span></span><span></span><span class="is-one"></span><span></span><span class="is-one"></span><span></span><span class="is-one"></span>
-          </div>
-          <div class="sample-output"><span>16 bytes. Endless possibilities.</span><output id="sample-hex" aria-label="Random sample in hexadecimal">A visual starting point</output></div>
-          <div class="signal-bottom"><p id="sample-note">A small exploration of randomness.</p><button class="sample-button" id="new-sample" type="button" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 7v5h-5M4 17v-5h5M6.1 7a7 7 0 0 1 11.5-1L20 9M4 15l2.4 3A7 7 0 0 0 17.9 17"/></svg>New sample</button></div>
-          <p class="sample-disclaimer">Browser demo using Web Crypto; independent of my QPP-RNG research.</p><p class="sr-only" id="sample-status" role="status"></p>
+        <p class="hero-intro">Hi, I’m Georgia! I’m a Software Engineering student at Carleton, a former DND cryptanalyst, and a published researcher. I like understanding how things work, asking how they could be safer, and turning good questions into useful software.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#experience">Explore my experience</a>
+          <a class="text-link" href="https://github.com/georgialive" target="_blank" rel="noopener noreferrer">GitHub</a>
         </div>
-        <div class="research-sticker"><span class="sticker-icon" aria-hidden="true">✺</span><div><strong>From curiosity to publication.</strong><span>Scientific Reports · 2025</span></div></div><span class="art-spark" aria-hidden="true">✦</span>
+        <div class="hero-footnote">
+          <img src="media/portrait.webp" width="48" height="48" alt="" fetchpriority="high">
+          <p>Based in Ontario, Canada.<br>Engineering, music, and a healthy amount of curiosity.</p>
+        </div>
+      </div>
+      <section class="instrument" aria-labelledby="instrument-title">
+        <div class="instrument-header"><span class="eyebrow">The curiosity lab</span><span class="instrument-badge">Try it</span></div>
+        <h2 id="instrument-title">A little randomness.<br><em>A little rhythm.</em></h2>
+        <p class="instrument-intro">Turn a random pattern into a tiny piece of music.</p>
+        <div class="instrument-stage">
+          <canvas id="instrument-canvas" width="560" height="360" role="img" aria-label="An interactive constellation of sixteen notes. Change the scatter, select a note, or play the pattern.">
+            A browser-generated pattern can be explored visually and played as a melody when JavaScript is available.
+          </canvas>
+          <span class="stage-note" id="note-readout">16 notes · D pentatonic</span>
+        </div>
+        <div id="instrument-controls" hidden>
+          <div class="instrument-modes" role="group" aria-label="Visualization mode">
+            <button type="button" data-view="orbit" aria-pressed="true">Constellation</button>
+            <button type="button" data-view="wave" aria-pressed="false">Wave</button>
+          </div>
+          <div class="instrument-actions">
+            <button type="button" class="instrument-primary" id="play-pattern">Play pattern</button>
+            <button type="button" class="instrument-secondary" id="new-pattern">New pattern</button>
+          </div>
+          <details class="instrument-tuning">
+            <summary>Shape the pattern <span aria-hidden="true">+</span></summary>
+            <div class="range-row"><label for="scatter">Scatter</label><input type="range" id="scatter" min="0" max="100" value="65"><output for="scatter" id="scatter-value">65%</output></div>
+            <div class="range-row"><label for="tempo">Tempo</label><input type="range" id="tempo" min="70" max="140" value="100"><output for="tempo" id="tempo-value">100 BPM</output></div>
+            <div class="note-keys" id="note-keys" role="group" aria-label="Select or play an individual note"></div>
+          </details>
+        </div>
+        <p class="instrument-caption">A playful mapping of Web Crypto bytes to visuals and sound. It is separate from QPP-RNG and does not measure entropy.</p>
+        <p class="instrument-status" id="instrument-status" role="status"></p>
+      </section>
+    </section>
+
+    <section class="section experience-section" id="experience" aria-labelledby="experience-title">
+      <div class="shell">
+        <div class="section-heading">
+          <div><p class="eyebrow">Recent experience</p><h2 id="experience-title">Cryptanalysis. Research.<br><em>Real engineering.</em></h2></div>
+          <p>Two different settings for the same curiosity: understanding systems deeply and making security more dependable.</p>
+        </div>
+        <div class="experience-grid">
+          <article class="experience-card defence-card">
+            <div class="experience-card-top"><span class="role-symbol" aria-hidden="true">⌘</span><span class="date-chip">May – Aug 2026</span></div>
+            <p class="eyebrow">Department of National Defence</p>
+            <h3>Cryptanalyst</h3>
+            <p class="role-description">A four-month cryptanalysis internship with Canada’s Department of National Defence, based in Ottawa.</p>
+            <dl class="role-facts"><div><dt>Setting</dt><dd>Government</dd></div><div><dt>Workplace</dt><dd>Ottawa · On-site</dd></div></dl>
+            <div class="card-bottom"><span class="card-note">Cryptanalysis · Internship</span><a class="text-link" href="#career-timeline">View career timeline</a></div>
+          </article>
+          <article class="experience-card research-card" id="research">
+            <div class="experience-card-top"><span class="role-symbol" aria-hidden="true">{ }</span><span class="date-chip">Feb – Sep 2025</span></div>
+            <p class="eyebrow">Quantropi</p>
+            <h3>Cryptographic Analyst</h3>
+            <p class="role-description">Implemented and evaluated cryptographic randomness across platforms, and first-authored a paper in <cite>Scientific Reports</cite>.</p>
+            <dl class="role-facts"><div><dt>Focus</dt><dd>QPP-RNG · Entropy</dd></div><div><dt>Tools</dt><dd>C · Python · Statistical tests</dd></div></dl>
+            <div class="card-bottom"><span class="card-note">Peer-reviewed research · 2025</span><a class="text-link" href="https://doi.org/10.1038/s41598-025-13135-8" target="_blank" rel="noopener noreferrer">Read the paper</a></div>
+          </article>
+        </div>
+        <details class="career-history" id="career-timeline">
+          <summary><span>Selected technical experience</span><span class="summary-note">A chronological view</span><span class="detail-plus" aria-hidden="true">+</span></summary>
+          <ol class="career-list">
+            <li data-end="2026-08"><time datetime="2026-08">May – Aug 2026</time><div><h3>Cryptanalyst</h3><p>Department of National Defence · Internship · Ottawa</p></div></li>
+            <li data-end="2025-09"><time datetime="2025-09">Feb – Sep 2025</time><div><h3>Cryptographic Analyst</h3><p>Quantropi · Contract full-time · Ottawa</p></div></li>
+            <li data-end="2024-05"><time datetime="2024-05">Jan 2023 – May 2024</time><div><h3>Frontend Engineer</h3><p>Frontend Simplified · Internship · Remote</p></div></li>
+            <li data-end="2023-12"><time datetime="2023-12">Mar – Dec 2023</time><div><h3>Executive Frontend Engineer</h3><p>Project: Empower · Contract full-time · Remote</p></div></li>
+          </ol>
+          <a class="text-link timeline-link" href="https://www.linkedin.com/in/georgiavrana/" target="_blank" rel="noopener noreferrer">Full experience on LinkedIn</a>
+        </details>
       </div>
     </section>
-    <div class="proof-strip"><div class="shell proof-inner"><span class="proof-label">A FEW PLACES I’VE LEARNED &amp; BUILT</span><span>Quantropi</span><span>Carleton University</span><span>Queen’s University</span><span>Project Empower</span></div></div>
-    <section class="section shell" id="research" aria-labelledby="research-title">
-      <div class="section-heading"><div><p class="eyebrow">Research &amp; systems</p><h2 id="research-title">Small signals.<br><em>Serious engineering.</em></h2></div><p>My favourite problems live where theory meets something you can build, test, and understand.</p></div>
-      <article class="research-feature">
-        <div class="research-visual" aria-hidden="true"><div class="research-visual-head"><span>QPP-RNG</span><span>SYSTEM JITTER / ENTROPY</span></div><div class="waveform"><svg viewBox="0 0 500 180" fill="none"><path class="wave-grid" d="M0 45H500M0 90H500M0 135H500M100 0V180M200 0V180M300 0V180M400 0V180"/><path class="wave-line" d="M0 90h16l8-10 9 26 10-48 11 71 12-89 11 74 8-24h16l9 14 9-37 9 56 9-84 10 103 10-76 8 24h20l10-12 9 43 9-71 12 104 10-94 9 48 9-18h13l11-28 9 52 9-74 11 102 10-65 10 13h15l9-8 10 22 10-51 10 84 11-108 9 91 10-49 10 19h20l9-8 8 21 8-30 8 17h22"/></svg></div><div class="pipeline"><span>Collect<br><strong>Timing variation</strong></span><i></i><span>Process<br><strong>Entropy</strong></span><i></i><span>Evaluate<br><strong>Randomness</strong></span></div><p class="visual-caption">Conceptual view of the research pipeline</p><div class="paper-badge"><span class="paper-icon">▤</span><div><span>PEER-REVIEWED PUBLICATION</span><strong>Scientific Reports</strong><small>Nature Portfolio · July 2025</small></div></div></div>
-        <div class="research-content"><p class="eyebrow">Cryptography · Quantropi</p><h3>Finding randomness<br>in the everyday.</h3><p>I co-authored research on QPP-RNG, a true random number generator that draws entropy from subtle system timing variations on everyday hardware.</p><p>My work connected C implementation, Python analysis, statistical evaluation, and testing across Windows, macOS, and Raspberry Pi.</p><ul class="tags" aria-label="Research technologies"><li>C</li><li>Python</li><li>NIST SP 800-90B</li><li>NIST SP 800-22</li><li>Cross-platform testing</li></ul><a class="button button-primary" href="https://doi.org/10.1038/s41598-025-13135-8" target="_blank" rel="noopener noreferrer">Read the published paper</a><p class="paper-citation">Vrana, G., Lou, D. &amp; Kuang, R. <cite>Raw QPP-RNG randomness via system jitter across platforms: a NIST SP 800-90B evaluation.</cite> Scientific Reports 15, 27718 (2025).</p></div>
-      </article>
+
+    <section class="section shell" id="toolkit" aria-labelledby="toolkit-title">
+      <div class="section-heading"><div><p class="eyebrow">The technical side</p><h2 id="toolkit-title">Different tools.<br><em>One thoughtful approach.</em></h2></div><p>Explore the areas I’ve worked in, the tools I use, and the questions I’m interested in next.</p></div>
+      <div class="toolkit">
+        <div class="toolkit-tabs" role="tablist" aria-label="Technical capabilities" hidden>
+          <button type="button" role="tab" id="tab-security" aria-controls="panel-security" aria-selected="true" tabindex="0">Security &amp; research</button>
+          <button type="button" role="tab" id="tab-systems" aria-controls="panel-systems" aria-selected="false" tabindex="-1">Systems &amp; analysis</button>
+          <button type="button" role="tab" id="tab-web" aria-controls="panel-web" aria-selected="false" tabindex="-1">Web &amp; interfaces</button>
+          <button type="button" role="tab" id="tab-hardware" aria-controls="panel-hardware" aria-selected="false" tabindex="-1">Hardware &amp; workflow</button>
+        </div>
+        <div class="toolkit-panel" role="tabpanel" id="panel-security" aria-labelledby="tab-security" tabindex="0">
+          <div><span class="panel-symbol" aria-hidden="true">⌘</span><h3>Start with a good question.</h3><p>My experience spans a DND cryptanalysis internship and published entropy research at Quantropi. I’m especially interested in secure systems, protocol analysis, and post-quantum cryptography.</p></div>
+          <div><p class="mini-heading">Experience &amp; learning</p><ul class="skill-list"><li>Cryptanalysis &amp; cryptography</li><li>NIST SP 800-90B &amp; SP 800-22 evaluation</li><li>Randomness testing &amp; research communication</li></ul><a class="credential" href="https://www.coursera.org/account/accomplishments/records/5Z04YDIS8X2T" target="_blank" rel="noopener noreferrer"><span>Cryptography I</span><span>Stanford University · June 2026</span></a></div>
+        </div>
+        <div class="toolkit-panel" role="tabpanel" id="panel-systems" aria-labelledby="tab-systems" tabindex="0">
+          <div><span class="panel-symbol" aria-hidden="true">{ }</span><h3>Get closer to the system.</h3><p>I’ve worked on entropy collection in C, analysis in Python, and cross-platform validation. I enjoy connecting an implementation to evidence that explains how it behaves.</p></div>
+          <div><p class="mini-heading">Tools I’ve worked with</p><ul class="skill-list"><li>C · Python · Java · C++</li><li>Pandas · Netdata · Shell scripting</li><li>Windows · macOS · Raspberry Pi</li><li>Algorithms &amp; data structures</li></ul><a class="text-link" href="https://doi.org/10.1038/s41598-025-13135-8" target="_blank" rel="noopener noreferrer">Explore the research</a></div>
+        </div>
+        <div class="toolkit-panel" role="tabpanel" id="panel-web" aria-labelledby="tab-web" tabindex="0">
+          <div><span class="panel-symbol" aria-hidden="true">&lt;/&gt;</span><h3>Make the interface make sense.</h3><p>Frontend work taught me to turn ideas into usable interfaces. I care about readable structure, responsive layouts, and interactions that explain themselves.</p></div>
+          <div><p class="mini-heading">Tools I’ve worked with</p><ul class="skill-list"><li>JavaScript · TypeScript · React</li><li>HTML · CSS · Firebase</li><li>Responsive interface development</li><li>Accessible interaction patterns</li></ul><a class="text-link" href="#archive">Explore earlier web projects</a></div>
+        </div>
+        <div class="toolkit-panel" role="tabpanel" id="panel-hardware" aria-labelledby="tab-hardware" tabindex="0">
+          <div><span class="panel-symbol" aria-hidden="true">⧉</span><h3>Connect the pieces.</h3><p>Hardware prototypes and engineering coursework keep me curious about the boundary between software and physical systems. Automation helps make the development process repeatable.</p></div>
+          <div><p class="mini-heading">Tools &amp; coursework</p><ul class="skill-list"><li>Arduino · Motion sensing · Prototyping</li><li>Verilog · FPGA coursework</li><li>Git · GitHub Actions · Makefiles</li><li>Docker · Cross-platform testing</li></ul><a class="text-link" href="#archive">View the assistive technology prototype</a></div>
+        </div>
+      </div>
     </section>
-    <section class="section work-section" id="work" aria-labelledby="work-title"><div class="shell">
-      <div class="section-heading"><div><p class="eyebrow">Selected work</p><h2 id="work-title">Thoughtful ideas.<br><em>Working things.</em></h2></div><p>From useful web experiences to hardware prototypes, here’s a little of what I’ve been building.</p></div>
-      <div class="work-toolbar"><div class="project-filters" role="group" aria-label="Filter projects" hidden><button type="button" data-filter="all" aria-pressed="true">All work</button><button type="button" data-filter="web" aria-pressed="false">Web &amp; interfaces</button><button type="button" data-filter="hardware" aria-pressed="false">Hardware &amp; research</button></div><p class="results-count" id="project-count" role="status">4 selected projects</p></div>
-      <div class="project-grid">
-        <article class="project-card" data-category="web"><div class="project-cover cover-illuminate"><img src="media/illuminate.webp" width="1200" height="691" loading="lazy" decoding="async" alt="Project Illuminate website, with a guide to extracurriculars and a mobile interface."><span class="cover-label">Built with a global team</span></div><div class="project-content"><p class="eyebrow">Frontend development · Project Empower</p><h3>Opening doors for students.</h3><p>Contributed to Project Illuminate, a platform helping students discover extracurricular opportunities, and to Project Empower’s web presence.</p><ul class="tags" aria-label="Project Illuminate technologies"><li>React</li><li>JavaScript</li><li>HTML &amp; CSS</li></ul><details><summary>Inside the project</summary><div class="project-details"><p>I worked with an international nonprofit team on student-facing web experiences. The focus: translating an educational mission into clear, responsive interfaces.</p><p><strong>Engineering focus:</strong> reusable interface patterns, responsive layouts, and collaboration across a shared codebase.</p></div></details><div class="project-links"><a href="https://illuminate.projectempower.io/" target="_blank" rel="noopener noreferrer">Visit Illuminate</a><a href="https://github.com/Project-Empower-io" target="_blank" rel="noopener noreferrer">Organization on GitHub</a></div></div></article>
-        <article class="project-card" data-category="hardware"><div class="project-cover cover-hardware"><img src="media/parkinsons.webp" width="1200" height="612" loading="lazy" decoding="async" alt="Presenting assistive technology research at Queen’s University."><span class="cover-label">Research with a human purpose</span></div><div class="project-content"><p class="eyebrow">Assistive technology · Queen’s University</p><h3>Engineering for everyday life.</h3><p>Co-developed an assistive device prototype exploring how wearable hardware and motion sensing can support people living with Parkinson’s disease.</p><ul class="tags" aria-label="Assistive technology stack"><li>C++</li><li>Arduino</li><li>Accelerometers</li><li>Prototyping</li></ul><details><summary>Inside the project</summary><div class="project-details"><p>Combined Arduino-based motion sensing with a wearable prototype and presented the work at Queen’s University. The result was an exploratory research prototype.</p><p><strong>Engineering focus:</strong> connecting sensor input, embedded code, and the practical needs of the person using the device.</p></div></details><div class="project-links"><a href="https://github.com/georgialive/Parkinson-s-Assistive-Device" target="_blank" rel="noopener noreferrer">Explore hardware code</a></div></div></article>
-        <article class="project-card" data-category="web"><div class="project-cover cover-library"><img src="media/library.webp" width="1200" height="696" loading="lazy" decoding="async" alt="Library book browsing website with featured book collections."><span class="cover-label">A frontend learning project</span></div><div class="project-content"><p class="eyebrow">Web development · Personal project</p><h3>A little space for good books.</h3><p>A book discovery interface built to practise layout, visual hierarchy, and the details that make browsing feel intuitive.</p><ul class="tags" aria-label="Library technologies"><li>HTML</li><li>CSS</li><li>Responsive design</li></ul><details><summary>Inside the project</summary><div class="project-details"><p>Built a landing page with featured and popular book collections. An early frontend project that helped me turn a visual design into a working page.</p><p><strong>Engineering focus:</strong> semantic page structure, consistent styling, and clear navigation through content.</p></div></details><div class="project-links"><a href="https://library-pink-phi.vercel.app/" target="_blank" rel="noopener noreferrer">View the website</a><a href="https://github.com/georgialive/Library" target="_blank" rel="noopener noreferrer">View source code</a></div></div></article>
-        <article class="project-card" data-category="web"><div class="project-cover cover-eye"><img src="media/eye.webp" width="1200" height="751" loading="lazy" decoding="async" alt="Interactive human eye anatomy project illustrating the structures of the eye."><span class="cover-label">Making science more approachable</span></div><div class="project-content"><p class="eyebrow">Interactive learning · Personal project</p><h3>See the science differently.</h3><p>An interactive anatomy project that helps explain the structures and functions of the human eye through a web experience.</p><ul class="tags" aria-label="Eye anatomy technologies"><li>JavaScript</li><li>HTML</li><li>CSS</li></ul><details><summary>Inside the project</summary><div class="project-details"><p>Created for a science lab, the project brings anatomical explanations into an interactive interface instead of leaving them on a static worksheet.</p><p><strong>Engineering focus:</strong> connecting interaction and explanatory content so the subject is easier to explore.</p></div></details><div class="project-links"><a href="https://interactive-human-eye-project.vercel.app/" target="_blank" rel="noopener noreferrer">Explore the project</a><a href="https://github.com/georgialive/InteractiveHumanEyeProject" target="_blank" rel="noopener noreferrer">View source code</a></div></div></article>
-      </div><div class="more-work"><p>There’s always another idea in the works.</p><a class="text-link" href="https://github.com/georgialive?tab=repositories" target="_blank" rel="noopener noreferrer">Browse more on GitHub</a></div>
+
+    <section class="section about-section" id="about" aria-labelledby="about-title"><div class="shell about-grid">
+      <div class="about-photo"><img src="media/portrait.webp" width="1059" height="1000" loading="lazy" decoding="async" alt="Georgia Vrana smiling at the camera."><span class="photo-note">The person<br><em>behind the code.</em></span></div>
+      <div class="about-copy"><p class="eyebrow">Hello, again!</p><h2 id="about-title">Engineer in the making.<br><em>Curious by nature.</em></h2><p>I’m studying Software Engineering at Carleton University. Security is a thread through the work I’m most excited about: understanding a system, questioning its assumptions, and making it more dependable.</p><p>Outside of engineering, I’m a musician. I like the mix of precision and creativity in both worlds—which is part of the inspiration behind the little instrument at the top of this page.</p><p>I’ve also taught lifesaving and first aid. Explaining something clearly, staying calm, and helping someone build confidence are skills I bring into technical work, too.</p><div class="about-facts"><div><span>EDUCATION</span><strong>Carleton University</strong><small>Software Engineering · 2025–2029</small></div><div><span>LANGUAGES</span><strong>English &amp; French</strong><small>DELF B1 French certification</small></div></div></div>
     </div></section>
-    <section class="section shell experience-section" id="experience" aria-labelledby="experience-title"><div class="experience-heading"><p class="eyebrow">The experience behind the code</p><h2 id="experience-title">Learning deeply.<br><em>Building deliberately.</em></h2><p>I like understanding the whole problem, asking good questions, and following the details all the way through.</p><a class="text-link" href="https://linkedin.com/in/georgiavrana" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a></div><div class="timeline">
-      <article class="timeline-entry"><div class="timeline-meta"><span>2025</span><span>Cryptography &amp; systems</span></div><h3>Cryptographic Analyst</h3><p class="organization">Quantropi</p><p>Worked on system-jitter entropy collection, C and Java integration, Python analysis, automated tests, and cross-platform validation. Co-authored a paper in Scientific Reports.</p><ul class="tags" aria-label="Quantropi skills"><li>C / Java / Python</li><li>GitHub Actions</li><li>Statistical testing</li></ul></article>
-      <article class="timeline-entry compact-entry"><div class="timeline-meta"><span>Internship</span></div><h3>Government Cryptanalyst Internship</h3></article>
-      <article class="timeline-entry"><div class="timeline-meta"><span>Summer 2024</span><span>Assistive technology</span></div><h3>Research &amp; Prototyping</h3><p class="organization">Queen’s University · NERD Lab</p><p>Co-developed a wearable assistive device prototype, explored motion sensing with Arduino, and presented the research.</p></article>
-      <article class="timeline-entry"><div class="timeline-meta"><span>2023</span><span>Frontend engineering</span></div><h3>Executive Frontend Engineer</h3><p class="organization">Project Empower</p><p>Collaborated with an international nonprofit team on web experiences that connect students with opportunities.</p></article>
+
+    <section class="section shell archive-section" id="archive" aria-labelledby="archive-title">
+      <div class="section-heading"><div><p class="eyebrow">A few earlier chapters</p><h2 id="archive-title">Where I started<br><em>putting ideas to work.</em></h2></div><p>A compact collection of earlier web and hardware projects. Select one to see the images and a little context.</p></div>
+      <div class="archive-list">
+        <a class="archive-row" href="media/illuminate.webp" data-project="project-illuminate" data-title="Project Illuminate"><span><strong>Project Illuminate</strong><small>Student opportunities · Team contribution</small></span><span class="archive-stack">React · JavaScript</span><span class="archive-action">View project <span aria-hidden="true">+</span></span></a>
+        <a class="archive-row" href="media/parkinsons.webp" data-project="project-parkinsons" data-title="Assistive technology prototype"><span><strong>Assistive technology prototype</strong><small>Parkinson’s research · Queen’s University</small></span><span class="archive-stack">C++ · Arduino</span><span class="archive-action">View project <span aria-hidden="true">+</span></span></a>
+        <a class="archive-row" href="media/library.webp" data-project="project-library" data-title="Library website"><span><strong>Library website</strong><small>Book discovery · Frontend practice</small></span><span class="archive-stack">HTML · CSS</span><span class="archive-action">View project <span aria-hidden="true">+</span></span></a>
+        <a class="archive-row" href="media/eye.webp" data-project="project-eye" data-title="Interactive human eye"><span><strong>Interactive human eye</strong><small>Science lab · Interactive learning</small></span><span class="archive-stack">JavaScript · HTML · CSS</span><span class="archive-action">View project <span aria-hidden="true">+</span></span></a>
+      </div>
+      <p class="archive-footer"><a class="text-link" href="https://github.com/georgialive?tab=repositories" target="_blank" rel="noopener noreferrer">More projects on GitHub</a></p>
+    </section>
+
+    <section class="contact-section" id="contact" aria-labelledby="contact-title"><div class="shell contact-inner">
+      <div><p class="eyebrow">Let’s make something worthwhile</p><h2 id="contact-title">A good question is<br><em>a lovely place to start.</em></h2><p>Have an opportunity, a project, or something interesting to discuss? I’d love to hear from you.</p><div class="contact-actions"><a class="email-link" href="mailto:georgia.m.vrana@gmail.com">georgia.m.vrana@gmail.com</a><button type="button" class="button button-primary" id="copy-email" hidden>Copy email</button></div><p class="copy-status" id="copy-status" role="status"></p></div><span class="contact-symbol" aria-hidden="true">✺</span>
     </div></section>
-    <section class="skills-section" aria-labelledby="skills-title"><div class="shell"><div class="skills-heading"><p class="eyebrow">My technical toolkit</p><h2 id="skills-title">Comfortable across the stack.<br><em>Curious beyond it.</em></h2></div><div class="skills-grid">
-      <article><span class="skill-symbol" aria-hidden="true">{ }</span><h3>Systems &amp; analysis</h3><p>Working close to the hardware, exploring data, and testing the assumptions behind an implementation.</p><ul><li>C · Python · Java · C++</li><li>Entropy &amp; randomness evaluation</li><li>Algorithms &amp; data structures</li></ul></article>
-      <article><span class="skill-symbol" aria-hidden="true">&lt;/&gt;</span><h3>Web &amp; interfaces</h3><p>Turning an idea into an experience that’s clear, responsive, and enjoyable to use.</p><ul><li>JavaScript · TypeScript · React</li><li>HTML · CSS · Firebase</li><li>Responsive interface development</li></ul></article>
-      <article><span class="skill-symbol" aria-hidden="true">⌘</span><h3>Hardware &amp; workflow</h3><p>Connecting software to physical systems and making development more repeatable.</p><ul><li>Arduino · Verilog · FPGA coursework</li><li>Git · GitHub Actions · Makefiles</li><li>Docker · Cross-platform testing</li></ul></article>
-    </div></div></section>
-    <section class="section shell about-section" id="about" aria-labelledby="about-title"><div class="about-photo"><img src="media/portrait.webp" width="1059" height="1000" loading="lazy" decoding="async" alt="Georgia Vrana, wearing a black shirt, smiling at the camera."><span class="photo-note">A little about the person<br><em>behind the code.</em></span><span class="photo-star" aria-hidden="true">✺</span></div><div class="about-copy"><p class="eyebrow">Hello, again!</p><h2 id="about-title">Engineer in the making.<br><em>Curious by nature.</em></h2><p>I’m Georgia, a Software Engineering student at Carleton University. I love the moment a complicated idea starts making sense, and the even better moment when I can turn it into something useful.</p><p>That curiosity has taken me from cryptography research to frontend development and assistive technology. Across all of it, I care about thoughtful implementation, a clear explanation, and the people on the other side of the screen.</p><p>Outside of engineering, I’m a musician. I like work that leaves room for both precision and creativity, and I’m always happy to meet people who feel the same.</p><div class="about-facts"><div><span>BASED IN</span><strong>Ottawa, Canada</strong></div><div><span>LANGUAGES</span><strong>English &amp; French</strong><small>DELF B1 French certification</small></div><div><span>STUDYING</span><strong>B.Eng. Software Engineering</strong><small>Carleton University</small></div></div></div></section>
-    <section class="contact-section" id="contact" aria-labelledby="contact-title"><div class="shell contact-inner"><div><p class="eyebrow">Good things start with a conversation</p><h2 id="contact-title">Something interesting<br>on your mind? <em>Let’s talk.</em></h2><p>Have a project, an opportunity, or a good question?<br>I’d love to hear from you.</p><div class="contact-actions"><a class="button button-primary" href="mailto:georgia.m.vrana@gmail.com">Email Georgia</a><button type="button" class="copy-email" id="copy-email" hidden>Copy email address</button></div><p class="copy-status" id="copy-status" role="status"></p></div><span class="contact-asterisk" aria-hidden="true">✺</span></div></section>
   </main>
-  <footer class="site-footer shell"><a class="wordmark" href="#home"><span class="monogram" aria-hidden="true">gv</span><span>Georgia Vrana<span class="purple">.</span></span></a><p>Made with care &amp; a little curiosity.<br>© <span id="year">2026</span> Georgia Vrana</p><nav aria-label="Social links"><a href="https://github.com/georgialive" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://linkedin.com/in/georgiavrana" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="mailto:georgia.m.vrana@gmail.com">Email</a></nav></footer>
+  <footer class="site-footer shell"><a class="wordmark" href="#home"><span class="monogram" aria-hidden="true">gv</span>Georgia Vrana<span class="purple">.</span></a><p>Made with care, code, and curiosity.<br>© <span id="year">2026</span> Georgia Vrana</p><nav aria-label="Social links"><a href="https://github.com/georgialive" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://www.linkedin.com/in/georgiavrana/" target="_blank" rel="noopener noreferrer">LinkedIn</a></nav></footer>
+
+  <dialog class="project-dialog" id="project-dialog" aria-labelledby="project-dialog-title">
+    <div class="dialog-header"><h2 id="project-dialog-title">Project</h2><button type="button" class="dialog-close" id="close-project">Close <span aria-hidden="true">×</span></button></div>
+    <div id="project-dialog-body"></div>
+    <div class="gallery-controls" id="gallery-controls" hidden><button type="button" id="previous-image" aria-label="Previous project image">Previous</button><span id="gallery-count" role="status"></span><button type="button" id="next-image" aria-label="Next project image">Next</button></div>
+  </dialog>
+  <template id="project-illuminate"><figure class="project-gallery"><img src="media/illuminate.webp" width="1200" height="691" alt="Project Illuminate’s student opportunities website."><img src="Assets/project-empower.png" width="1200" height="692" alt="Project Empower’s nonprofit website." hidden></figure><div class="dialog-copy"><p>Contributed to Project Illuminate and Project Empower’s web presence with an international nonprofit team. The work connected responsive frontend development to helping students find opportunities.</p><ul class="tags"><li>React</li><li>JavaScript</li><li>HTML &amp; CSS</li></ul><div class="project-links"><a href="https://illuminate.projectempower.io/" target="_blank" rel="noopener noreferrer">Visit Illuminate</a><a href="https://github.com/Project-Empower-io" target="_blank" rel="noopener noreferrer">Organization on GitHub</a></div></div></template>
+  <template id="project-parkinsons"><figure class="project-gallery"><img src="media/parkinsons.webp" width="1200" height="612" alt="Presenting the assistive technology prototype at Queen’s University."></figure><div class="dialog-copy"><p>Co-developed an exploratory wearable prototype using Arduino and motion sensing to investigate assistive technology for people living with Parkinson’s disease. Presented the work at Queen’s University.</p><ul class="tags"><li>C++</li><li>Arduino</li><li>Accelerometers</li><li>Prototyping</li></ul><div class="project-links"><a href="https://github.com/georgialive/Parkinson-s-Assistive-Device" target="_blank" rel="noopener noreferrer">Explore hardware code</a></div></div></template>
+  <template id="project-library"><figure class="project-gallery"><img src="media/library.webp" width="1200" height="696" alt="Library website with featured books and a purple illustration."></figure><div class="dialog-copy"><p>An early frontend project exploring a book discovery interface, featured collections, page structure, and visual hierarchy.</p><ul class="tags"><li>HTML</li><li>CSS</li><li>Responsive layout</li></ul><div class="project-links"><a href="https://library-pink-phi.vercel.app/" target="_blank" rel="noopener noreferrer">View the website</a><a href="https://github.com/georgialive/Library" target="_blank" rel="noopener noreferrer">View source</a></div></div></template>
+  <template id="project-eye"><figure class="project-gallery"><img src="media/eye.webp" width="1200" height="751" alt="Interactive human eye anatomy page."></figure><div class="dialog-copy"><p>A science-lab web project using interaction to explain the anatomy and functions of the human eye.</p><ul class="tags"><li>JavaScript</li><li>HTML</li><li>CSS</li></ul><div class="project-links"><a href="https://interactive-human-eye-project.vercel.app/" target="_blank" rel="noopener noreferrer">Explore the website</a><a href="https://github.com/georgialive/InteractiveHumanEyeProject" target="_blank" rel="noopener noreferrer">View source</a></div></div></template>
 </body>
 </html>
