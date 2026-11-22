@@ -1,46 +1,28 @@
-name: Prepare portfolio redesign
+name: Portfolio checks
 
 on:
   push:
-    branches: [redesign/portfolio-2026]
-    paths: [scripts/portfolio-transfer.b64]
+    branches: [main, redesign/portfolio-2026]
+  pull_request:
+    branches: [main]
 
 permissions:
-  contents: write
+  contents: read
+
+concurrency:
+  group: portfolio-checks-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
-  prepare-redesign:
+  validate:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 5
     steps:
-      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
-      - name: Write the reviewed portfolio source
-        shell: bash
-        run: |
-          python3 - <<'PY'
-          from pathlib import Path
-          import base64, gzip, json
-          root = Path.cwd().resolve()
-          transfer = root / 'scripts/portfolio-transfer.b64'
-          files = json.loads(gzip.decompress(base64.b64decode(transfer.read_text())))
-          for name, data in files.items():
-              target = (root / name).resolve()
-              if not target.is_relative_to(root) or '.git' in target.parts or '.github' in target.parts:
-                  raise ValueError('Invalid file path')
-              target.parent.mkdir(parents=True, exist_ok=True)
-              target.write_bytes(base64.b64decode(data))
-          transfer.unlink()
-          print(f'Prepared {len(files)} portfolio files')
-          
-          PY
-      - name: Check source and build static assets
+      - name: Check out source
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Validate source and build
         run: |
           npm run check
           npm run build
-      - name: Commit only to the redesign branch
-        run: |
-          git config user.name 'Georgia Vrana'
-          git config user.email '98627101+georgialive@users.noreply.github.com'
-          git add index.html styles.css app.js package.json README.md .gitignore .nojekyll robots.txt sitemap.xml scripts tests media
-          git commit -m 'Redesign portfolio around research, technical work, and experience'
-          git push origin HEAD:refs/heads/redesign/portfolio-2026
