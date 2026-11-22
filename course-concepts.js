@@ -1,8 +1,9 @@
+import { detailedConcepts, renderDetailedConcept } from "./course-simulations.js";
 import { binaryTree } from "./visual-models.js";
 const NS="http://www.w3.org/2000/svg";
 const create=(tag,attrs={})=>{const n=document.createElementNS(NS,tag);for(const[k,v]of Object.entries(attrs))n.setAttribute(k,v);return n;};
 const topics={
-'MATH 1004':['integral','Area becomes volume','Upper limit','Explore how the accumulated area under y = x² grows.'],
+'MATH 1004':['integral','An integral accumulates area','Upper limit','Explore how the accumulated area under y = x² grows.'],
 'MATH 1104':['matrix','A transformation in motion','Shear','See a matrix shear a square while preserving its area.'],
 'MATH 1005':['wave','Oscillation and decay','Damping','Compare oscillation with exponential decay in a model response.'],
 'CHEM 1101':['molecule','From atoms to structure','Bond angle','Change the geometry of a simple molecule model.'],
@@ -42,7 +43,7 @@ const topics={
 };
 export function conceptFor(course) {
  const fallback=course.code.startsWith('CSE')?['sets','Ideas across disciplines','Connections','Explore how different fields can share ideas.']:course.code.startsWith('BSE')?['wave','A scientific question to explore','Frequency','A representative wave model; the elective has not yet been selected.']:['process','A direction still to choose','Connections','Explore a representative technical pathway; the elective has not yet been selected.'];
- const [type,title,label,description]=topics[course.code]||fallback;return {type,title,label,description};
+ const [type,title,label,description]=detailedConcepts[course.code]||topics[course.code]||fallback;return {type,title,label,description};
 }
 export function mountCourseConcept(container,course) {
  const concept=conceptFor(course);container.replaceChildren();
@@ -54,6 +55,12 @@ export function mountCourseConcept(container,course) {
  const input=document.createElement('input');Object.assign(input,{type:'range',min:'1',max:'8',value:'4',id:'concept-value'});
  const output=document.createElement('output');output.htmlFor='concept-value';output.setAttribute('role','status');
  if(concept.type==='logic') input.max='4';
+ if(concept.type==='cpu') input.max='12';
+ if(['inheritance','controls','scheduler'].includes(concept.type)) input.max='4';
+ if(['memory','factorial'].includes(concept.type)) input.max='6';
+ if(['architecture','trace'].includes(concept.type)) input.max='3';
+ if(concept.type==='ph'){input.max='14';input.value='7';}
+ if(Number(input.value)>Number(input.max)) input.value=input.max;
  row.append(label,input,output);container.append(heading,svg,text,row);
  function draw(){
   const v=Number(input.value);svg.replaceChildren();
@@ -63,6 +70,8 @@ export function mountCourseConcept(container,course) {
   const caption=(x,y,value,size=18)=>{const n=create('text',{x,y,fill:'#624781','font-size':size,'text-anchor':'middle','font-family':'system-ui,sans-serif'});n.textContent=value;svg.append(n);};
   const poly=(points,fill='none')=>svg.append(create('polyline',{points,fill,stroke:'#7853b0','stroke-width':2.5,'stroke-linejoin':'round'}));
   output.textContent=String(v);
+  const detailed=renderDetailedConcept(course,v,{svg,create,line,circle,rect,caption,poly});
+  if(detailed!==null){output.textContent=detailed;input.setAttribute('aria-valuetext',detailed);return;}
   if(concept.type==='integral'){
    line(65,295,545,295);line(65,295,65,35);const end=v/8;let ps='65,295 ';
    for(let i=0;i<=80;i++){const x=i/80*end;ps+=`${65+450*x},${295-235*x*x} `;}poly(ps+`${65+450*end},295`,'#e4d6f1');output.textContent=`∫₀^${end.toFixed(2)} x² dx = ${(end**3/3).toFixed(3)}`;
@@ -79,7 +88,7 @@ export function mountCourseConcept(container,course) {
   }else if(concept.type==='motion'){
    const angle=(15+v*7)*Math.PI/180;let ps='';const flight=2*Math.sin(angle);for(let i=0;i<=100;i++){const t=i/100*flight;ps+=`${50+Math.cos(angle)*t*450},${300-(Math.sin(angle)*t-.5*t*t)*420} `;}line(35,300,565,300);poly(ps);output.textContent=`Launch angle ${15+v*7}°`;
   }else if(concept.type==='circuit'){
-   poly('140,100 450,100 450,260 140,260 140,100');rect(250,80,110,40);line(115,160,165,160,'#7654a0',4);line(125,180,155,180,'#7654a0',4);caption(300,70,'R = 100 Ω');caption(300,320,`I = V / R = ${(v/100).toFixed(2)} A`);output.textContent=`${v} volts`;
+   poly('140,160 140,100 450,100 450,260 140,260 140,180');rect(250,80,110,40);line(115,160,165,160,'#7654a0',4);line(125,180,155,180,'#7654a0',4);caption(300,70,'R = 100 Ω');caption(300,320,`I = V / R = ${(v/100).toFixed(2)} A`);output.textContent=`${v} volts`;
   }else if(concept.type==='logic'){
    const a=Math.floor((v-1)/2)%2,b=(v-1)%2;line(90,130,245,130);line(90,230,245,230);rect(245,95,130,170);caption(310,190,'AND');line(375,180,480,180);circle(500,180,22,a&&b?'#b39bd2':'#f5f0f9');caption(90,110,String(a));caption(90,215,String(b));output.textContent=`${a} AND ${b} = ${a&&b?1:0}`;
   }else if(concept.type==='sets'){
