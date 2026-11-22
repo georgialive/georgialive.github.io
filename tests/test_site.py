@@ -1,0 +1,94 @@
+"""Check navigation, publishing, accessibility, and content privacy invariants."""
+from html.parser import HTMLParser
+from pathlib import Path
+import re
+import unittest
+from urllib.parse import unquote, urlsplit
+
+ROOT = Path(__file__).resolve().parent.parent
+
+class Page(HTMLParser):
+    def __init__(self, text):
+        super().__init__(convert_charrefs=True)
+        self.elements = []
+        self.feed(text)
+    def handle_starttag(self, tag, attrs):
+        self.elements.append((tag, dict(attrs)))
+
+class PortfolioChecks(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.source = (ROOT / "index.html").read_text()
+        cls.page = Page(cls.source)
+
+    def test_unique_ids_and_anchor_targets(self):
+        ids = [attrs["id"] for _, attrs in self.page.elements if "id" in attrs]
+        self.assertEqual(len(ids), len(set(ids)))
+        for tag, attrs in self.page.elements:
+            href = attrs.get("href", "")
+            if tag == "a" and href.startswith("#"):
+                self.assertIn(href[1:], ids, href)
+
+    def test_local_assets_exist(self):
+        for _, attrs in self.page.elements:
+            for attribute in ("href", "src"):
+                value = attrs.get(attribute, "")
+                parsed = urlsplit(value)
+                if value and not parsed.scheme and not value.startswith("#"):
+                    self.assertTrue((ROOT / unquote(parsed.path)).is_file(), value)
+        for path in re.findall(r'url\(["\']?([^"\')]+)', (ROOT / "styles.css").read_text()):
+            self.assertTrue((ROOT / path).is_file(), path)
+
+    def test_images_and_landmarks(self):
+        for tag, attrs in self.page.elements:
+            if tag == "img":
+                self.assertIn("alt", attrs)
+                self.assertIn("width", attrs)
+                self.assertIn("height", attrs)
+            if tag == "button":
+                self.assertIn(attrs.get("type"), {"button", "submit"})
+        self.assertEqual(sum(tag == "h1" for tag, _ in self.page.elements), 1)
+        self.assertEqual(sum(tag == "main" for tag, _ in self.page.elements), 1)
+
+    def test_external_windows_are_isolated(self):
+        for _, attrs in self.page.elements:
+            if attrs.get("target") == "_blank":
+                self.assertTrue({"noopener", "noreferrer"} <= set(attrs.get("rel", "").split()))
+
+    def test_self_hosted_scripts_and_fonts(self):
+        for tag, attrs in self.page.elements:
+            if tag == "script" or (tag == "link" and attrs.get("as") == "font"):
+                self.assertFalse(urlsplit(attrs.get("src", attrs.get("href", ""))).netloc)
+        self.assertNotIn("innerHTML", (ROOT / "app.js").read_text())
+        self.assertIn("prefers-reduced-motion", (ROOT / "styles.css").read_text())
+
+    def test_verified_experience_dates_and_reverse_chronology(self):
+        # Verified against Georgia's LinkedIn experience section, 2026-11-22.
+        ends = re.findall(r'data-end="([0-9-]+)"', self.source)
+        self.assertEqual(ends, ["2026-08", "2025-09", "2025-09", "2024-11", "2024-10", "2024-05", "2023-12"])
+        self.assertEqual(ends, sorted(ends, reverse=True))
+        self.assertIn("Department of National Defence", self.source)
+        self.assertIn("May – Aug 2026", self.source)
+        self.assertIn("Feb – Sep 2025", self.source)
+
+    def test_archive_dialog_and_toolkit_references_resolve(self):
+        ids = {attrs["id"] for _, attrs in self.page.elements if "id" in attrs}
+        for _, attrs in self.page.elements:
+            if "data-project" in attrs:
+                self.assertIn(attrs["data-project"], ids)
+            if "aria-controls" in attrs:
+                self.assertIn(attrs["aria-controls"], ids)
+        self.assertEqual(sum(tag == "dialog" for tag, _ in self.page.elements), 3)
+        self.assertEqual(sum("data-project" in attrs for _, attrs in self.page.elements), 8)
+
+    def test_resume_is_removed_from_public_site(self):
+        self.assertNotIn('resume.html', self.source)
+        self.assertFalse((ROOT / "resume.html").exists())
+        self.assertNotIn('resume.html', (ROOT / "scripts/build.mjs").read_text())
+
+    def test_canonical_domain_preserved(self):
+        self.assertEqual((ROOT / "CNAME").read_text().strip(), "georgiavrana.com")
+        self.assertIn('rel="canonical" href="https://georgiavrana.com/"', self.source)
+
+if __name__ == "__main__":
+    unittest.main()
