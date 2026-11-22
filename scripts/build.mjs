@@ -8,7 +8,7 @@ const root = dirname(dirname(fileURLToPath(import.meta.url)));
 const output = join(root, "dist");
 await rm(output, { recursive: true, force: true });
 await mkdir(output);
-for (const file of ["index.html", "styles.css", "app.js", "instrument.js", "math.js", "math-lab.js", "contact.js", "course-data.js", "course-map.js", "course-concepts.js", "course-details.js", "course-simulations.js", "advanced-lab.js", "visual-models.js", "resume.html", "resume.js", "robots.txt", "sitemap.xml", "CNAME", ".nojekyll"]) {
+for (const file of ["index.html", "styles.css", "app.js", "instrument.js", "math.js", "math-lab.js", "contact.js", "course-data.js", "course-map.js", "course-concepts.js", "course-details.js", "course-simulations.js", "advanced-lab.js", "visual-models.js", "recursion-lab.js", "robots.txt", "sitemap.xml", "CNAME", ".nojekyll"]) {
   await cp(join(root, file), join(output, file));
 }
 await cp(join(root, "media"), join(output, "media"), { recursive: true });
