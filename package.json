@@ -2,10 +2,12 @@
   "name": "georgia-vrana-portfolio",
   "version": "2.0.0",
   "private": true,
+  "type": "module",
+  "engines": { "node": ">=22" },
   "description": "Accessible, dependency-free portfolio for Georgia Vrana.",
   "scripts": {
-    "build": "python3 scripts/build.py",
-    "test": "python3 -m unittest discover -s tests -v",
-    "check": "node --check app.js && python3 -m unittest discover -s tests -v"
+    "build": "node scripts/build.mjs",
+    "test": "node --test tests/instrument.test.mjs && python3 -m unittest discover -s tests -v",
+    "check": "node --check app.js && node --check instrument.js && npm test"
   }
 }
