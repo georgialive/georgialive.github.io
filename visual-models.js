@@ -1,17 +1,4 @@
 /** Deterministic geometry shared by the math playground and course miniatures. */
-export function kochPoints(depth = 3) {
-  if (!Number.isInteger(depth) || depth < 0 || depth > 5) throw new RangeError("Depth must be 0–5.");
-  let points = [{x:60,y:280},{x:540,y:280}];
-  for (let n=0;n<depth;n++) {
-    const next=[points[0]];
-    for(let i=1;i<points.length;i++) {
-      const a=points[i-1],b=points[i], dx=(b.x-a.x)/3,dy=(b.y-a.y)/3;
-      next.push({x:a.x+dx,y:a.y+dy},{x:a.x+1.5*dx+Math.sqrt(3)/2*dy,y:a.y+1.5*dy-Math.sqrt(3)/2*dx},{x:a.x+2*dx,y:a.y+2*dy},b);
-    }
-    points=next;
-  }
-  return points;
-}
 export function binaryTree(depth = 3) {
   if (!Number.isInteger(depth) || depth < 1 || depth > 5) throw new RangeError("Depth must be 1–5.");
   const nodes=[];
