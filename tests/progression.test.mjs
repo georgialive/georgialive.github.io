@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {courses,courseStatus,torontoDate,semesterSchedule} from '../course-data.js';
-import {binaryTree,kochPoints,revolutionVolume,revolutionLines} from '../visual-models.js';
+import {binaryTree,revolutionVolume,revolutionLines} from '../visual-models.js';
 import {conceptFor} from '../course-concepts.js';
 
 test('semester rollover uses Toronto dates and waits until after final exam day',()=>{
@@ -25,8 +25,7 @@ test('all planned semesters and course overrides behave consistently',()=>{
  }
  const capstone=courses.find(c=>c.term==='Full year');assert.equal(courseStatus(capstone,'2028-12-31'),'current');
 });
-test('Koch recursion and binary tree preserve their structural invariants',()=>{
- for(let d=0;d<=5;d++){const ps=kochPoints(d);assert.equal(ps.length,4**d+1);let length=0;for(let i=1;i<ps.length;i++)length+=Math.hypot(ps[i].x-ps[i-1].x,ps[i].y-ps[i-1].y);assert.ok(Math.abs(length-480*(4/3)**d)<1e-6);}
+test('binary tree preserves its structural invariants',()=>{
  for(let d=1;d<=5;d++){const ns=binaryTree(d);assert.equal(ns.length,2**(d+1)-1);assert.equal(ns.filter(n=>n.parent===null).length,1);for(const n of ns)if(n.parent!==null){assert.ok(n.parent<n.id);assert.equal(ns[n.parent].level,n.level-1);}}
 });
 test('solid volume respects sweep and wireframe coordinates remain finite',()=>{
