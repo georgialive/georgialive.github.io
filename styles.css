@@ -532,3 +532,5 @@ body:has(dialog[open]) { overflow: hidden; }
 .header-inner > .button .contact-label { font-size: .875rem; color: inherit; }
 .header-inner > .button > svg { width: 1.15rem; height: 1.15rem; color: var(--purple); }
 @media (max-width: 560px) { .header-inner > .button .contact-label { display: none; } .header-inner > .button { width: 2.5rem; height: 2.5rem; min-height: 2.5rem; padding: .5rem; } }
+.learning-progress .progress-done { background: #36704e; }
+.learning-progress .progress-current, .course-legend .current::before { background: var(--purple); }
