@@ -81,13 +81,10 @@ class PortfolioChecks(unittest.TestCase):
         self.assertEqual(sum(tag == "dialog" for tag, _ in self.page.elements), 3)
         self.assertEqual(sum("data-project" in attrs for _, attrs in self.page.elements), 8)
 
-    def test_public_resume_has_safe_contact_links(self):
-        resume = (ROOT / "resume.html").read_text()
-        for private in ("Communications Security Establishment", "6132778126", "dafu.lou@", "randy.kuang@"):
-            self.assertNotIn(private, resume)
-        self.assertIn('aria-label="Explore my GitHub"', resume)
-        self.assertIn('aria-label="Connect on LinkedIn"', resume)
-        self.assertIn('id="print-resume"', resume)
+    def test_resume_is_removed_from_public_site(self):
+        self.assertNotIn('resume.html', self.source)
+        self.assertFalse((ROOT / "resume.html").exists())
+        self.assertNotIn('resume.html', (ROOT / "scripts/build.mjs").read_text())
 
     def test_canonical_domain_preserved(self):
         self.assertEqual((ROOT / "CNAME").read_text().strip(), "georgiavrana.com")
