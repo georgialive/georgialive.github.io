@@ -1,299 +1,98 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Georgia Vrana</title>
-    <link rel="icon" type="image/x-icon" href="./Assets/Screenshot 2024-09-30 at 2.17.39 PM.png">
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://kit.fontawesome.com/ac385bd3d7.js" crossorigin="anonymous"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#f7f7fc">
+  <meta name="description" content="Hi, I'm Georgia Vrana, a software engineering student, published cryptography researcher, and musician in Ottawa. Explore my work across systems, web development, and assistive technology.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Georgia Vrana — Software, with purpose.">
+  <meta property="og:description" content="Software engineering, cryptography research, and a little creative curiosity. A portfolio by Georgia Vrana.">
+  <meta property="og:url" content="https://georgiavrana.com/">
+  <meta property="og:image" content="https://georgiavrana.com/media/social-preview.png">
+  <meta property="og:image:alt" content="Georgia Vrana. Software, with purpose. Engineering, research, and thoughtful interfaces.">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://georgiavrana.com/">
+  <link rel="icon" href="media/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="media/fonts/manrope-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="media/fonts/manrope-bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+  <title>Georgia Vrana — Software, with purpose.</title>
 </head>
 <body>
-    <section id="about-me">
-        <nav>
-            <div class="personal__logo">Georgia Vrana</div>
-            <ul class="nav__link--list">
-                <li class="nav__link">
-                    <a href="#languages" class="
-                    nav__link--anchor
-                    link__hover-effect
-                    link__hover-effect--black
-                    ">Languages</a>
-                </li>
-                <li class="nav__link">
-                    <a href="#projects" class="
-                    nav__link--anchor
-                    link__hover-effect
-                    link__hover-effect--black">
-                    Projects</a>
-                </li>
-                <li class="nav__link">
-                    <a href="mailto:georgia.m.vrana@gmail.com" target="_blank"class="
-                    nav__link--anchor
-                    nav__link--anchor-primary">
-                    Contact</a>
-                </li>
-            </ul>
-        </nav>
-        <div class="flex flex-1">
-            <div class="about-me__info row">
-                <div class="about-me__info--container">
-                    <figure class="about-me__picture--mask">
-                        <img src="./Assets/Screenshot 2024-09-30 at 2.17.39 PM.png" class="about-me__picture" alt="Picture of Me">
-                    </figure>
-                    <h1 class="about-me__info--title">
-                        Hi, I'm 
-                        <span class="intro-name">
-                            Georgia
-                        </span>.
-                        <span class="Cursor Cursor--blinking">|</span>
-                    </h1>
-                    <p class="about-me__info--para">
-                        I'm a <strong class="text--purple">software engineer</strong> and musician based in Canada. I have great interest in 
-                        full-stack development, artificial intelligence, human-computer interactions, and everything in between. 
-                    </p>
-                    <div class="about-me__links">
-                        <a href="https://discord.gg/3zakc2rckH" target="_blank"class="about-me__link">
-                            <i class="fa-brands fa-discord"></i>
-                        </a>
-                        <a href="https://github.com/georgialive" target="_blank" class="about-me__link">
-                            <i class="fa-brands fa-github"></i>
-                        </a>
-                        <a href="https://linkedin.com/in/georgiavrana" target="_blank"class="about-me__link">
-                            <i class="fa-brands fa-linkedin-in"></i>
-                        </a>
-                        <a href="./Assets/Georgia Vrana's Resume.pdf" target="_blank" class="about-me__link">
-                            <i class="fa-solid fa-file"></i>
-                        </a>
-                    </div>
-                </div>
-                <figure class="about-me__img--container">
-                    <img src="./Assets/undraw_pair_programming_re_or4x.svg" class="about-me__img" alt="">
-                </figure>
-            </div>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><div class="shell header-inner">
+    <a class="wordmark" href="#home" aria-label="Georgia Vrana, back to top"><span class="monogram" aria-hidden="true">gv</span><span>Georgia Vrana<span class="purple">.</span></span></a>
+    <nav class="main-nav" aria-label="Main navigation"><a href="#work">Work</a><a href="#research">Research</a><a href="#experience">Experience</a><a href="#about">About</a></nav>
+    <a class="button button-small header-contact" href="#contact">Say hello <span class="purple" aria-hidden="true">✺</span></a>
+  </div></header>
+  <main id="main">
+    <section class="hero shell" id="home" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="small-star" aria-hidden="true">✺</span> Software engineering · Ottawa, Canada</p>
+        <h1 id="hero-title">A curious mind.<br>A builder’s heart.<br><em>Purposeful code.</em></h1>
+        <p class="hero-intro">Hi, I’m Georgia! I turn tricky problems into thoughtful software, from the little signals behind cryptographic randomness to the interfaces people use every day.</p>
+        <div class="hero-actions"><a class="button button-primary" href="#work">Explore my work</a><a class="text-link" href="https://github.com/georgialive" target="_blank" rel="noopener noreferrer">Find me on GitHub <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M9 21v-4c0-1-.5-2-1-2-5 0-6-9-2-11L6 1l4 2h4l4-2v3c4 2 3 11-2 11-.5 0-1 1-1 2v4M9 18c-4 1-4-2-6-2"/></svg></a></div>
+        <div class="hero-footnote"><span class="portrait-mini"><img src="media/portrait.webp" width="44" height="44" alt="" fetchpriority="high"></span><p>Engineering student at <strong>Carleton University</strong><br>Researcher. Problem solver. Musician.</p></div>
+      </div>
+      <div class="hero-art">
+        <div class="orbit-label"><span aria-hidden="true">✦</span> A little curiosity goes a long way.</div>
+        <div class="signal-card">
+          <div class="signal-heading"><span class="tiny-label">THE CURIOSITY LAB</span><span class="chip-dark">Interactive sketch</span></div>
+          <div class="signal-title">Big ideas.<br><span>Small beginnings.</span></div>
+          <div class="bit-grid" id="bit-grid" aria-hidden="true"><!-- Static sketch; progressively enhanced with browser-generated bits. -->
+            <span class="is-one"></span><span></span><span class="is-one"></span><span></span><span></span><span class="is-one"></span><span class="is-one"></span><span></span><span></span><span class="is-one"></span><span></span><span></span><span class="is-one"></span><span></span><span class="is-one"></span><span class="is-one"></span>
+            <span></span><span class="is-one"></span><span></span><span></span><span class="is-one"></span><span class="is-one"></span><span></span><span></span><span class="is-one"></span><span></span><span class="is-one"></span><span></span><span></span><span class="is-one"></span><span></span><span></span>
+            <span class="is-one"></span><span></span><span></span><span class="is-one"></span><span></span><span class="is-one"></span><span></span><span class="is-one"></span><span></span><span></span><span class="is-one"></span><span class="is-one"></span><span></span><span></span><span class="is-one"></span><span></span>
+            <span></span><span class="is-one"></span><span class="is-one"></span><span></span><span></span><span></span><span class="is-one"></span><span></span><span class="is-one"></span><span></span><span></span><span class="is-one"></span><span class="is-one"></span><span></span><span></span><span class="is-one"></span>
+            <span class="is-one"></span><span></span><span class="is-one"></span><span class="is-one"></span><span></span><span></span><span></span><span class="is-one"></span><span></span><span class="is-one"></span><span></span><span class="is-one"></span><span></span><span></span><span class="is-one"></span><span></span>
+            <span></span><span class="is-one"></span><span></span><span></span><span class="is-one"></span><span></span><span class="is-one"></span><span></span><span class="is-one"></span><span></span><span class="is-one"></span><span></span><span></span><span class="is-one"></span><span></span><span class="is-one"></span>
+            <span class="is-one"></span><span class="is-one"></span><span></span><span></span><span class="is-one"></span><span></span><span></span><span class="is-one"></span><span></span><span></span><span class="is-one"></span><span></span><span class="is-one"></span><span></span><span class="is-one"></span><span></span>
+            <span></span><span></span><span class="is-one"></span><span class="is-one"></span><span></span><span class="is-one"></span><span></span><span></span><span class="is-one"></span><span></span><span></span><span class="is-one"></span><span></span><span class="is-one"></span><span></span><span class="is-one"></span>
+          </div>
+          <div class="sample-output"><span>16 bytes. Endless possibilities.</span><output id="sample-hex" aria-label="Random sample in hexadecimal">A visual starting point</output></div>
+          <div class="signal-bottom"><p id="sample-note">A small exploration of randomness.</p><button class="sample-button" id="new-sample" type="button" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 7v5h-5M4 17v-5h5M6.1 7a7 7 0 0 1 11.5-1L20 9M4 15l2.4 3A7 7 0 0 0 17.9 17"/></svg>New sample</button></div>
+          <p class="sample-disclaimer">Browser demo using Web Crypto; independent of my QPP-RNG research.</p><p class="sr-only" id="sample-status" role="status"></p>
         </div>
+        <div class="research-sticker"><span class="sticker-icon" aria-hidden="true">✺</span><div><strong>From curiosity to publication.</strong><span>Scientific Reports · 2025</span></div></div><span class="art-spark" aria-hidden="true">✦</span>
+      </div>
     </section>
-    <section id="languages">
-        <div class="container">
-            <div class="row">
-                <h1 class="section__title">This is my <spa class="text--purple">Technology Stack</span></h1>
-                <div class="language__list">
-                    <div class="language">
-                        <figure class="language__img--wrapper">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/240px-HTML5_Badge.svg.png" alt="HTML Logo" class="language__img">
-                        </figure>
-                        <span class="language__name">HTML</span>
-                    </div>
-                    <div class="language">
-                        <figure class="language__img--wrapper">
-                            <img src="https://cdn.iconscout.com/icon/free/png-256/css-131-722685.png" alt="CSS Logo" class="language__img">
-                        </figure>
-                        <span class="language__name">CSS</span>
-                    </div>
-                    <div class="language">
-                        <figure class="language__img--wrapper">
-                            <img src="https://cdn-icons-png.flaticon.com/512/9307/9307668.png" alt="Java Logo" class="language__img">
-                        </figure>
-                        <span class="language__name">Java</span>
-                    </div>
-                    <div class="language">
-                        <figure class="language__img--wrapper">
-                            <img src="https://cdn.iconscout.com/icon/free/png-256/javascript-1-225993.png" alt="JavaScript Logo" class="language__img">
-                        </figure>
-                        <span class="language__name">JavaScript</span>
-                    </div>
-                    <div class="language">
-                        <figure class="language__img--wrapper">
-                            <img src="https://cdn.iconscout.com/icon/free/png-256/react-3-1175109.png" alt="React Logo" class="language__img">
-                        </figure>
-                        <span class="language__name">React</span>
-                    </div>
-                    <div class="language">
-                        <figure class="language__img--wrapper">
-                            <img src="https://cdn-icons-png.flaticon.com/512/2570/2570575.png" alt="Python Logo" class="language__img">
-                        </figure>
-                        <span class="language__name">Python</span>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="proof-strip"><div class="shell proof-inner"><span class="proof-label">A FEW PLACES I’VE LEARNED &amp; BUILT</span><span>Quantropi</span><span>Carleton University</span><span>Queen’s University</span><span>Project Empower</span></div></div>
+    <section class="section shell" id="research" aria-labelledby="research-title">
+      <div class="section-heading"><div><p class="eyebrow">Research &amp; systems</p><h2 id="research-title">Small signals.<br><em>Serious engineering.</em></h2></div><p>My favourite problems live where theory meets something you can build, test, and understand.</p></div>
+      <article class="research-feature">
+        <div class="research-visual" aria-hidden="true"><div class="research-visual-head"><span>QPP-RNG</span><span>SYSTEM JITTER / ENTROPY</span></div><div class="waveform"><svg viewBox="0 0 500 180" fill="none"><path class="wave-grid" d="M0 45H500M0 90H500M0 135H500M100 0V180M200 0V180M300 0V180M400 0V180"/><path class="wave-line" d="M0 90h16l8-10 9 26 10-48 11 71 12-89 11 74 8-24h16l9 14 9-37 9 56 9-84 10 103 10-76 8 24h20l10-12 9 43 9-71 12 104 10-94 9 48 9-18h13l11-28 9 52 9-74 11 102 10-65 10 13h15l9-8 10 22 10-51 10 84 11-108 9 91 10-49 10 19h20l9-8 8 21 8-30 8 17h22"/></svg></div><div class="pipeline"><span>Collect<br><strong>Timing variation</strong></span><i></i><span>Process<br><strong>Entropy</strong></span><i></i><span>Evaluate<br><strong>Randomness</strong></span></div><p class="visual-caption">Conceptual view of the research pipeline</p><div class="paper-badge"><span class="paper-icon">▤</span><div><span>PEER-REVIEWED PUBLICATION</span><strong>Scientific Reports</strong><small>Nature Portfolio · July 2025</small></div></div></div>
+        <div class="research-content"><p class="eyebrow">Cryptography · Quantropi</p><h3>Finding randomness<br>in the everyday.</h3><p>I co-authored research on QPP-RNG, a true random number generator that draws entropy from subtle system timing variations on everyday hardware.</p><p>My work connected C implementation, Python analysis, statistical evaluation, and testing across Windows, macOS, and Raspberry Pi.</p><ul class="tags" aria-label="Research technologies"><li>C</li><li>Python</li><li>NIST SP 800-90B</li><li>NIST SP 800-22</li><li>Cross-platform testing</li></ul><a class="button button-primary" href="https://doi.org/10.1038/s41598-025-13135-8" target="_blank" rel="noopener noreferrer">Read the published paper</a><p class="paper-citation">Vrana, G., Lou, D. &amp; Kuang, R. <cite>Raw QPP-RNG randomness via system jitter across platforms: a NIST SP 800-90B evaluation.</cite> Scientific Reports 15, 27718 (2025).</p></div>
+      </article>
     </section>
-    <section id="projects">
-        <div class="container">
-            <div class="row">
-                <h1 class="section__title">Here are some of my <span class="text--purple">Projects</span></h1>
-                <ul class="project__list">
-                     <li class="project">
-                        <div class="project__wrapper">
-                            <img src="./Assets/Screenshot 2024-09-30 at 2.27.39 PM.png" class="project__img" alt="Parkinson's Disease Solution">
-                            <div class="project__description">
-                                <h3 class="project__description--title">Parkinson's Disease Solution</h3>
-                                <h4 class="project__description--sub-title">C++, Arudino UNO</h4>
-                                <p class="project__description--para">
-                                    Our Parkinson's presentation to the Queen's Research and Development Board showcased innovative solutions using assistive devices and wearable technology to help 
-                                    mitigate tremors and improve quality of life for individuals living with Parkinson's disease.
-                                </p>
-                                <div class="project__description--links">
-                                    <a href="https://github.com/georgialive/Holden-Song-Selection-Catcher-in-the-Rye" target="_blank" class="project__description--link">
-                                        <i class="fa-brands fa-github"></i>
-                                    </a>
-                                    <a href="https://cdsbeo-my.sharepoint.com/:p:/g/personal/gvran4893_cdsbeo_on_ca/Ed_qJ9_dCixKqkcfn-CF1cUB1MqZbHUsF-N6EUEyefVItw?e=tRHASh" target="_blank" class="project__description--link">
-                                        <i class="fa-solid fa-link"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="project">
-                        <div class="project__wrapper">
-                            <img src="./Assets/project-illuminate.png" class="project__img" alt="Project Illuminate">
-                            <div class="project__description">
-                                <h3 class="project__description--title">Project Illuminate</h3>
-                                <h4 class="project__description--sub-title">HTML, CSS, Javascript, React</h4>
-                                <p class="project__description--para">
-                                    Using systematic HTML, CSS, Javascript, and React (and a few other languages that some of my friends at Project: Empower worked with)
-                                    an international 501(c)3 non-profit organization) created a website for the 
-                                    company, that is a guide for highschool and univerity students to find the best extra-curriculars that has had over 500,000 users and an increase of our social media precence by 75%.
-                                </p>
-                                <div class="project__description--links">
-                                    <a href="https://github.com/Project-Empower-io" target="_blank" class="project__description--link">
-                                        <i class="fa-brands fa-github"></i>
-                                    </a>
-                                    <a href="https://illuminate.projectempower.io/" target="_blank" class="project__description--link">
-                                        <i class="fa-solid fa-link"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="project">
-                        <div class="project__wrapper">
-                            <img src="./Assets/project-empower.png" class="project__img" alt="Project Empower Website">
-                            <div class="project__description">
-                                <h3 class="project__description--title">Project Empower Website</h3>
-                                <h4 class="project__description--sub-title">HTML, CSS, Javascript</h4>
-                                <p class="project__description--para">
-                                    Using systematic HTML, CSS, and Javascript my team and I, at Project: Empower
-                                    (an international 501(c)3 non-profit organization) created a website for the 
-                                    company, that has had over 1,000,000 visitors and an increase of our social media precence by 120%.
-                                    Click <a class="treact__link" href="https://illuminate.projectempower.io/" target="_blank" class="project__description--link">here</a>, to see my team and I's latest project.
-                                </p>
-                                <div class="project__description--links">
-                                    <a href="https://github.com/Project-Empower-io" target="_blank" class="project__description--link">
-                                        <i class="fa-brands fa-github"></i>
-                                    </a>
-                                    <a href="https://projectempower.io/" target="_blank" class="project__description--link">
-                                        <i class="fa-solid fa-link"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="project">
-                        <div class="project__wrapper">
-                            <img src="./Assets/Treact Website Clone.png" class="project__img" alt="Library Project">
-                            <div class="project__description">
-                                <h3 class="project__description--title">Treact Clone Project</h3>
-                                <h4 class="project__description--sub-title">HTML, CSS</h4>
-                                <p class="project__description--para">
-                                    Using systematic HTML and CSS, I cloned a web-application called
-                                    <a class="treact__link" href="https://treact.owaiskhan.me/components/landingPages/SaaSProductLandingPage" target="_blank" class="project__description--link">Treact</a>
-                                   . I created a clone of the project in using my own code, and using best practices.
-                                </p>
-                                <div class="project__description--links">
-                                    <a href="https://github.com/georgialive/Final-Project" target="_blank" class="project__description--link">
-                                        <i class="fa-brands fa-github"></i>
-                                    </a>
-                                    <a href="https://treact-clone-beta.vercel.app/" target="_blank" class="project__description--link">
-                                        <i class="fa-solid fa-link"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="project">
-                        <div class="project__wrapper">
-                            <img src="./Assets/Library.png" class="project__img" alt="Library Project">
-                            <div class="project__description">
-                                <h3 class="project__description--title">Library Project</h3>
-                                <h4 class="project__description--sub-title">HTML, CSS</h4>
-                                <p class="project__description--para">
-                                    A web-application that allows you to browse our featured books
-                                    and most popular books, that uses systematic HTML and CSS.
-                                </p>
-                                <div class="project__description--links">
-                                    <a href="https://github.com/georgialive/Library" target="_blank" class="project__description--link">
-                                        <i class="fa-brands fa-github"></i>
-                                    </a>
-                                    <a href="https://library-pink-phi.vercel.app/" target="_blank" class="project__description--link">
-                                        <i class="fa-solid fa-link"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="project">
-                        <div class="project__wrapper">
-                            <img src="./Assets/Screenshot 2023-02-01 at 1.38.16 PM.png" class="project__img" alt="Interactive Human Eye Project">
-                            <div class="project__description">
-                                <h3 class="project__description--title">Interactive Human Eye Project</h3>
-                                <h4 class="project__description--sub-title">HTML, CSS, JavaScript</h4>
-                                <p class="project__description--para">
-                                    A web-application for my science lab, that uses interactivity to 
-                                    explain the anatomy and functions of the human eye.
-                                </p>
-                                <div class="project__description--links">
-                                    <a href="https://github.com/georgialive/InteractiveHumanEyeProject" target="_blank" class="project__description--link">
-                                        <i class="fa-brands fa-github"></i>
-                                    </a>
-                                    <a href="https://interactive-human-eye-project.vercel.app/" target="_blank" class="project__description--link">
-                                        <i class="fa-solid fa-link"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </section>
-    <footer>
-        <div class="row footer__row">
-            <a href="#" class="footer__anchor">
-                <figure class="footer__logo">
-                    <img src="./Assets/Screenshot 2023-02-01 at 5.51.44 PM.png" class="footer__logo--img" alt="home-button">
-                </figure>
-            <span class="footer__logo--popper">
-                Top
-                <i class="fa-solid fa-arrow-up"></i>
-            </span>
-            </a>
-            <div class="footer__social--list">
-                <a href="https://discord.gg/3zakc2rckH" target="_blank" class="
-                footer__social--link
-                link__hover-effect
-                link__hover-effect--white" 
-                target="_blank">Discord</a>
-                <a href="https://github.com/georgialive" target="_blank" class="
-                footer__social--link
-                link__hover-effect
-                link__hover-effect--white" 
-                target="_blank">Github</a>
-                <a href="mailto:georgia.m.vrana@gmail.com" target="_blank" class="
-                footer__social--link
-                link__hover-effect
-                link__hover-effect--white" 
-                target="_blank">Email</a>
-                <a href="./Assets/Georgia Vrana's Resume .pdf" target="_blank" class="
-                footer__social--link
-                link__hover-effect
-                link__hover-effect--white" 
-                target="_blank">Resume</a>
-            </div>
-            <div class="footer__copywrite">Copyright © 2023 Georgia Vrana</div>
-        </div>
-    </footer>
+    <section class="section work-section" id="work" aria-labelledby="work-title"><div class="shell">
+      <div class="section-heading"><div><p class="eyebrow">Selected work</p><h2 id="work-title">Thoughtful ideas.<br><em>Working things.</em></h2></div><p>From useful web experiences to hardware prototypes, here’s a little of what I’ve been building.</p></div>
+      <div class="work-toolbar"><div class="project-filters" role="group" aria-label="Filter projects" hidden><button type="button" data-filter="all" aria-pressed="true">All work</button><button type="button" data-filter="web" aria-pressed="false">Web &amp; interfaces</button><button type="button" data-filter="hardware" aria-pressed="false">Hardware &amp; research</button></div><p class="results-count" id="project-count" role="status">4 selected projects</p></div>
+      <div class="project-grid">
+        <article class="project-card" data-category="web"><div class="project-cover cover-illuminate"><img src="media/illuminate.webp" width="1200" height="691" loading="lazy" decoding="async" alt="Project Illuminate website, with a guide to extracurriculars and a mobile interface."><span class="cover-label">Built with a global team</span></div><div class="project-content"><p class="eyebrow">Frontend development · Project Empower</p><h3>Opening doors for students.</h3><p>Contributed to Project Illuminate, a platform helping students discover extracurricular opportunities, and to Project Empower’s web presence.</p><ul class="tags" aria-label="Project Illuminate technologies"><li>React</li><li>JavaScript</li><li>HTML &amp; CSS</li></ul><details><summary>Inside the project</summary><div class="project-details"><p>I worked with an international nonprofit team on student-facing web experiences. The focus: translating an educational mission into clear, responsive interfaces.</p><p><strong>Engineering focus:</strong> reusable interface patterns, responsive layouts, and collaboration across a shared codebase.</p></div></details><div class="project-links"><a href="https://illuminate.projectempower.io/" target="_blank" rel="noopener noreferrer">Visit Illuminate</a><a href="https://github.com/Project-Empower-io" target="_blank" rel="noopener noreferrer">Organization on GitHub</a></div></div></article>
+        <article class="project-card" data-category="hardware"><div class="project-cover cover-hardware"><img src="media/parkinsons.webp" width="1200" height="612" loading="lazy" decoding="async" alt="Presenting assistive technology research at Queen’s University."><span class="cover-label">Research with a human purpose</span></div><div class="project-content"><p class="eyebrow">Assistive technology · Queen’s University</p><h3>Engineering for everyday life.</h3><p>Co-developed an assistive device prototype exploring how wearable hardware and motion sensing can support people living with Parkinson’s disease.</p><ul class="tags" aria-label="Assistive technology stack"><li>C++</li><li>Arduino</li><li>Accelerometers</li><li>Prototyping</li></ul><details><summary>Inside the project</summary><div class="project-details"><p>Combined Arduino-based motion sensing with a wearable prototype and presented the work at Queen’s University. The result was an exploratory research prototype.</p><p><strong>Engineering focus:</strong> connecting sensor input, embedded code, and the practical needs of the person using the device.</p></div></details><div class="project-links"><a href="https://github.com/georgialive/Parkinson-s-Assistive-Device" target="_blank" rel="noopener noreferrer">Explore hardware code</a></div></div></article>
+        <article class="project-card" data-category="web"><div class="project-cover cover-library"><img src="media/library.webp" width="1200" height="696" loading="lazy" decoding="async" alt="Library book browsing website with featured book collections."><span class="cover-label">A frontend learning project</span></div><div class="project-content"><p class="eyebrow">Web development · Personal project</p><h3>A little space for good books.</h3><p>A book discovery interface built to practise layout, visual hierarchy, and the details that make browsing feel intuitive.</p><ul class="tags" aria-label="Library technologies"><li>HTML</li><li>CSS</li><li>Responsive design</li></ul><details><summary>Inside the project</summary><div class="project-details"><p>Built a landing page with featured and popular book collections. An early frontend project that helped me turn a visual design into a working page.</p><p><strong>Engineering focus:</strong> semantic page structure, consistent styling, and clear navigation through content.</p></div></details><div class="project-links"><a href="https://library-pink-phi.vercel.app/" target="_blank" rel="noopener noreferrer">View the website</a><a href="https://github.com/georgialive/Library" target="_blank" rel="noopener noreferrer">View source code</a></div></div></article>
+        <article class="project-card" data-category="web"><div class="project-cover cover-eye"><img src="media/eye.webp" width="1200" height="751" loading="lazy" decoding="async" alt="Interactive human eye anatomy project illustrating the structures of the eye."><span class="cover-label">Making science more approachable</span></div><div class="project-content"><p class="eyebrow">Interactive learning · Personal project</p><h3>See the science differently.</h3><p>An interactive anatomy project that helps explain the structures and functions of the human eye through a web experience.</p><ul class="tags" aria-label="Eye anatomy technologies"><li>JavaScript</li><li>HTML</li><li>CSS</li></ul><details><summary>Inside the project</summary><div class="project-details"><p>Created for a science lab, the project brings anatomical explanations into an interactive interface instead of leaving them on a static worksheet.</p><p><strong>Engineering focus:</strong> connecting interaction and explanatory content so the subject is easier to explore.</p></div></details><div class="project-links"><a href="https://interactive-human-eye-project.vercel.app/" target="_blank" rel="noopener noreferrer">Explore the project</a><a href="https://github.com/georgialive/InteractiveHumanEyeProject" target="_blank" rel="noopener noreferrer">View source code</a></div></div></article>
+      </div><div class="more-work"><p>There’s always another idea in the works.</p><a class="text-link" href="https://github.com/georgialive?tab=repositories" target="_blank" rel="noopener noreferrer">Browse more on GitHub</a></div>
+    </div></section>
+    <section class="section shell experience-section" id="experience" aria-labelledby="experience-title"><div class="experience-heading"><p class="eyebrow">The experience behind the code</p><h2 id="experience-title">Learning deeply.<br><em>Building deliberately.</em></h2><p>I like understanding the whole problem, asking good questions, and following the details all the way through.</p><a class="text-link" href="https://linkedin.com/in/georgiavrana" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a></div><div class="timeline">
+      <article class="timeline-entry"><div class="timeline-meta"><span>2025</span><span>Cryptography &amp; systems</span></div><h3>Cryptographic Analyst</h3><p class="organization">Quantropi</p><p>Worked on system-jitter entropy collection, C and Java integration, Python analysis, automated tests, and cross-platform validation. Co-authored a paper in Scientific Reports.</p><ul class="tags" aria-label="Quantropi skills"><li>C / Java / Python</li><li>GitHub Actions</li><li>Statistical testing</li></ul></article>
+      <article class="timeline-entry compact-entry"><div class="timeline-meta"><span>Internship</span></div><h3>Government Cryptanalyst Internship</h3></article>
+      <article class="timeline-entry"><div class="timeline-meta"><span>Summer 2024</span><span>Assistive technology</span></div><h3>Research &amp; Prototyping</h3><p class="organization">Queen’s University · NERD Lab</p><p>Co-developed a wearable assistive device prototype, explored motion sensing with Arduino, and presented the research.</p></article>
+      <article class="timeline-entry"><div class="timeline-meta"><span>2023</span><span>Frontend engineering</span></div><h3>Executive Frontend Engineer</h3><p class="organization">Project Empower</p><p>Collaborated with an international nonprofit team on web experiences that connect students with opportunities.</p></article>
+    </div></section>
+    <section class="skills-section" aria-labelledby="skills-title"><div class="shell"><div class="skills-heading"><p class="eyebrow">My technical toolkit</p><h2 id="skills-title">Comfortable across the stack.<br><em>Curious beyond it.</em></h2></div><div class="skills-grid">
+      <article><span class="skill-symbol" aria-hidden="true">{ }</span><h3>Systems &amp; analysis</h3><p>Working close to the hardware, exploring data, and testing the assumptions behind an implementation.</p><ul><li>C · Python · Java · C++</li><li>Entropy &amp; randomness evaluation</li><li>Algorithms &amp; data structures</li></ul></article>
+      <article><span class="skill-symbol" aria-hidden="true">&lt;/&gt;</span><h3>Web &amp; interfaces</h3><p>Turning an idea into an experience that’s clear, responsive, and enjoyable to use.</p><ul><li>JavaScript · TypeScript · React</li><li>HTML · CSS · Firebase</li><li>Responsive interface development</li></ul></article>
+      <article><span class="skill-symbol" aria-hidden="true">⌘</span><h3>Hardware &amp; workflow</h3><p>Connecting software to physical systems and making development more repeatable.</p><ul><li>Arduino · Verilog · FPGA coursework</li><li>Git · GitHub Actions · Makefiles</li><li>Docker · Cross-platform testing</li></ul></article>
+    </div></div></section>
+    <section class="section shell about-section" id="about" aria-labelledby="about-title"><div class="about-photo"><img src="media/portrait.webp" width="1059" height="1000" loading="lazy" decoding="async" alt="Georgia Vrana, wearing a black shirt, smiling at the camera."><span class="photo-note">A little about the person<br><em>behind the code.</em></span><span class="photo-star" aria-hidden="true">✺</span></div><div class="about-copy"><p class="eyebrow">Hello, again!</p><h2 id="about-title">Engineer in the making.<br><em>Curious by nature.</em></h2><p>I’m Georgia, a Software Engineering student at Carleton University. I love the moment a complicated idea starts making sense, and the even better moment when I can turn it into something useful.</p><p>That curiosity has taken me from cryptography research to frontend development and assistive technology. Across all of it, I care about thoughtful implementation, a clear explanation, and the people on the other side of the screen.</p><p>Outside of engineering, I’m a musician. I like work that leaves room for both precision and creativity, and I’m always happy to meet people who feel the same.</p><div class="about-facts"><div><span>BASED IN</span><strong>Ottawa, Canada</strong></div><div><span>LANGUAGES</span><strong>English &amp; French</strong><small>DELF B1 French certification</small></div><div><span>STUDYING</span><strong>B.Eng. Software Engineering</strong><small>Carleton University</small></div></div></div></section>
+    <section class="contact-section" id="contact" aria-labelledby="contact-title"><div class="shell contact-inner"><div><p class="eyebrow">Good things start with a conversation</p><h2 id="contact-title">Something interesting<br>on your mind? <em>Let’s talk.</em></h2><p>Have a project, an opportunity, or a good question?<br>I’d love to hear from you.</p><div class="contact-actions"><a class="button button-primary" href="mailto:georgia.m.vrana@gmail.com">Email Georgia</a><button type="button" class="copy-email" id="copy-email" hidden>Copy email address</button></div><p class="copy-status" id="copy-status" role="status"></p></div><span class="contact-asterisk" aria-hidden="true">✺</span></div></section>
+  </main>
+  <footer class="site-footer shell"><a class="wordmark" href="#home"><span class="monogram" aria-hidden="true">gv</span><span>Georgia Vrana<span class="purple">.</span></span></a><p>Made with care &amp; a little curiosity.<br>© <span id="year">2026</span> Georgia Vrana</p><nav aria-label="Social links"><a href="https://github.com/georgialive" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://linkedin.com/in/georgiavrana" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="mailto:georgia.m.vrana@gmail.com">Email</a></nav></footer>
 </body>
 </html>
-
