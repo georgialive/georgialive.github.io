@@ -1,3 +1,4 @@
+import { detailsFor, supportingOutlines } from "./course-details.js";
 import { courses, statusLabels, courseStatus, torontoDate, semesterSchedule } from "./course-data.js";
 import { mountCourseConcept } from "./course-concepts.js";
 
@@ -44,7 +45,14 @@ export function initCourseMap() {
     const status=courseStatus(course),schedule=semesterSchedule[`${course.year}-${course.term}`];
     dialog.querySelector('#course-dialog-status').textContent=`${symbols[status]} ${statusLabels[status]} · Year ${course.year} · ${course.term} · ${course.credits?`${course.credits.toFixed(1)} credit`:'Non-credit requirement'}${course.year>1&&schedule?` · Planned end ${schedule.end}`:''}`;
     dialog.querySelector('#course-dialog-summary').textContent=course.summary;
-    dialog.querySelector('#course-dialog-link').href=course.url;
+    const details=detailsFor(course);
+    const list=dialog.querySelector('#course-topic-list');list.replaceChildren();
+    for(const topic of details.topics){const item=document.createElement('li');item.textContent=topic;list.append(item);}
+    dialog.querySelector('#course-source-note').textContent=details.note;
+    const sourceLink=dialog.querySelector('#course-dialog-link');sourceLink.href=details.sourceUrl;sourceLink.textContent=details.sourceLabel;
+    const outline=dialog.querySelector('#course-outline-link'),support=supportingOutlines[course.code];outline.hidden=!support;
+    if(support){outline.href=support.url;outline.textContent=support.label;}
+
     mountCourseConcept(dialog.querySelector('#course-concept'),course);
     dialog.showModal();dialog.scrollTop=0;dialog.querySelector('button').focus();
   });
